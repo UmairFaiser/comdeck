@@ -1,0 +1,90 @@
+{
+  "resources": [
+    {
+      "id": "econ-notes-2024-1",
+      "subject": "economics",
+      "type": "notes",
+      "title": "Introduction to Economics",
+      "filePath": "/resources/economics/notes/introduction-to-economics.pdf",
+      "description": "Basic concepts and principles"
+    },
+    {
+      "id": "econ-short-notes-2024-1",
+      "subject": "economics",
+      "type": "short-notes",
+      "title": "Key Economic Terms",
+      "filePath": "/resources/economics/short-notes/key-economic-terms.pdf",
+      "description": "Quick reference guide"
+    },
+    {
+      "id": "econ-past-paper-2023",
+      "subject": "economics",
+      "type": "past-papers",
+      "year": 2023,
+      "title": "Economics Past Paper 2023",
+      "filePath": "/resources/economics/past-papers/economics-2023.pdf",
+      "hasAnswers": true
+    },
+    {
+      "id": "econ-past-paper-answers-2023",
+      "subject": "economics",
+      "type": "past-paper-answers",
+      "year": 2023,
+      "title": "Economics Past Paper Answers 2023",
+      "filePath": "/resources/economics/past-paper-answers/economics-answers-2023.pdf",
+      "linkedPaperId": "econ-past-paper-2023"
+    },
+    {
+      "id": "ict-notes-2024-1",
+      "subject": "ict",
+      "type": "notes",
+      "title": "Database Fundamentals",
+      "filePath": "/resources/ict/notes/database-fundamentals.pdf",
+      "description": "Introduction to databases"
+    },
+    {
+      "id": "ict-past-paper-2023",
+      "subject": "ict",
+      "type": "past-papers",
+      "year": 2023,
+      "title": "ICT Past Paper 2023",
+      "filePath": "/resources/ict/past-papers/ict-2023.pdf",
+      "hasAnswers": true
+    },
+    {
+      "id": "ict-provincial-paper-2023",
+      "subject": "ict",
+      "type": "provincial-papers",
+      "year": 2023,
+      "title": "ICT Provincial Paper 2023",
+      "filePath": "/resources/ict/provincial-papers/ict-provincial-2023.pdf",
+      "hasAnswers": false
+    },
+    {
+      "id": "accounting-notes-2024-1",
+      "subject": "accounting",
+      "type": "notes",
+      "title": "Financial Statements",
+      "filePath": "/resources/accounting/notes/financial-statements.pdf",
+      "description": "Understanding balance sheets and income statements"
+    },
+    {
+      "id": "accounting-unit-paper-2024-1",
+      "subject": "accounting",
+      "type": "unit-papers",
+      "title": "Unit 1 Test Paper",
+      "filePath": "/resources/accounting/unit-papers/unit-1-test.pdf",
+      "hasAnswers": true
+    },
+    {
+      "id": "business-model-paper-2024",
+      "subject": "business-studies",
+      "type": "model-papers",
+      "year": 2024,
+      "title": "Business Studies Model Paper 2024",
+      "filePath": "/resources/business-studies/model-papers/business-model-2024.pdf",
+      "hasAnswers": true
+    }
+  ]
+}
+
