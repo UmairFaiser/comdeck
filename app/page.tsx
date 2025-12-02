@@ -9,7 +9,7 @@ export default function Home() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <header className="mb-16 text-center">
           <Link href="/">
-            <h1 className="text-5xl font-semibold text-[oklch(0.90_0_0)] mb-4 font-serif">
+            <h1 className="text-5xl font-semibold text-[oklch(0.90_0_0)] my-8 font-serif">
               Comdeck
             </h1>
           </Link>
