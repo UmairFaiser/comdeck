@@ -64,12 +64,12 @@ async function SearchResultsContent({ searchParams }: SearchPageProps) {
         <header className="mb-8">
           <div className="flex items-center gap-4">
             <BackButton href="/" label="Back to Home" />
-            <h1 className="text-3xl font-bold text-[oklch(0.90_0_0)]">
+            <h1 className="text-3xl font-bold text-[oklch(0.90_0_0)] text-center">
               Search Results
             </h1>
           </div>
           {q && (
-            <p className="mt-2 text-[oklch(0.60_0_0)]">
+            <p className="mt-2 text-[oklch(0.60_0_0)] text-center">
               {results.length} result{results.length !== 1 ? "s" : ""} for "
               {q}"
             </p>

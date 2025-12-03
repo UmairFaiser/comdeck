@@ -1,89 +1,210 @@
 {
   "resources": [
     {
-      "id": "econ-notes-2024-1",
-      "subject": "economics",
-      "type": "notes",
-      "title": "Introduction to Economics",
-      "filePath": "/resources/economics/notes/introduction-to-economics.pdf",
-      "description": "Basic concepts and principles"
-    },
-    {
-      "id": "econ-short-notes-2024-1",
-      "subject": "economics",
+      "id": "accounting-short-notes-full-syllabus",
+      "subject": "accounting",
       "type": "short-notes",
-      "title": "Key Economic Terms",
-      "filePath": "/resources/economics/short-notes/key-economic-terms.pdf",
-      "description": "Quick reference guide"
+      "title": "Accounting Short Notes: Full Syllabus",
+      "filePath": "/resources/accounting/short-notes/accounting-short-notes-full-syllabus.pdf"
     },
     {
-      "id": "econ-past-paper-2023",
-      "subject": "economics",
-      "type": "past-papers",
-      "year": 2023,
-      "title": "Economics Past Paper 2023",
-      "filePath": "/resources/economics/past-papers/economics-2023.pdf",
-      "hasAnswers": true
+      "id": "ict-short-notes-css",
+      "subject": "ict",
+      "type": "short-notes",
+      "title": "ICT Short Notes: CSS",
+      "filePath": "/resources/ict/short-notes/ict-short-notes-css.pdf"
     },
     {
-      "id": "econ-past-paper-answers-2023",
-      "subject": "economics",
+      "id": "ict-short-notes-data-representation",
+      "subject": "ict",
+      "type": "short-notes",
+      "title": "ICT Short Notes: Data Representation",
+      "filePath": "/resources/ict/short-notes/ict-short-notes-data-representation.pdf"
+    },
+    {
+      "id": "ict-short-notes-database",
+      "subject": "ict",
+      "type": "short-notes",
+      "title": "ICT Short Notes: Database",
+      "filePath": "/resources/ict/short-notes/ict-short-notes-database.pdf"
+    },
+    {
+      "id": "ict-short-notes-digital-circuits",
+      "subject": "ict",
+      "type": "short-notes",
+      "title": "ICT Short Notes: Digital Circuits",
+      "filePath": "/resources/ict/short-notes/ict-short-notes-digital-circuits.pdf"
+    },
+    {
+      "id": "ict-short-notes-full-syllabus",
+      "subject": "ict",
+      "type": "short-notes",
+      "title": "ICT Short Notes: Full Syllabus",
+      "filePath": "/resources/ict/short-notes/ict-short-notes-full-syllabus.pdf"
+    },
+    {
+      "id": "ict-short-notes-html",
+      "subject": "ict",
+      "type": "short-notes",
+      "title": "ICT Short Notes: HTML",
+      "filePath": "/resources/ict/short-notes/ict-short-notes-html.pdf"
+    },
+    {
+      "id": "ict-short-notes-information-systems",
+      "subject": "ict",
+      "type": "short-notes",
+      "title": "ICT Short Notes: Information Systems",
+      "filePath": "/resources/ict/short-notes/ict-short-notes-information-systems.pdf"
+    },
+    {
+      "id": "ict-short-notes-internet-of-things",
+      "subject": "ict",
+      "type": "short-notes",
+      "title": "ICT Short Notes: Internet of Things",
+      "filePath": "/resources/ict/short-notes/ict-short-notes-internet-of-things.pdf"
+    },
+    {
+      "id": "ict-short-notes-lessons-1and2",
+      "subject": "ict",
+      "type": "short-notes",
+      "title": "ICT Short Notes: Lessons 1 and 2",
+      "filePath": "/resources/ict/short-notes/ict-short-notes-lessons-1and2.pdf"
+    },
+    {
+      "id": "ict-short-notes-networking",
+      "subject": "ict",
+      "type": "short-notes",
+      "title": "ICT Short Notes: Networking",
+      "filePath": "/resources/ict/short-notes/ict-short-notes-networking.pdf"
+    },
+    {
+      "id": "ict-short-notes-operating-system",
+      "subject": "ict",
+      "type": "short-notes",
+      "title": "ICT Short Notes: Operating System",
+      "filePath": "/resources/ict/short-notes/ict-short-notes-operating-system.pdf"
+    },
+    {
+      "id": "ict-short-notes-php",
+      "subject": "ict",
+      "type": "short-notes",
+      "title": "ICT Short Notes: PHP",
+      "filePath": "/resources/ict/short-notes/ict-short-notes-php.pdf"
+    },
+    {
+      "id": "ict-short-notes-programming",
+      "subject": "ict",
+      "type": "short-notes",
+      "title": "ICT Short Notes: Programming",
+      "filePath": "/resources/ict/short-notes/ict-short-notes-programming.pdf"
+    },
+    {
+      "id": "ict-past-paper-answers-2011",
+      "subject": "ict",
       "type": "past-paper-answers",
-      "year": 2023,
-      "title": "Economics Past Paper Answers 2023",
-      "filePath": "/resources/economics/past-paper-answers/economics-answers-2023.pdf",
-      "linkedPaperId": "econ-past-paper-2023"
+      "year": 2011,
+      "title": "ICT Past Paper Answers 2011",
+      "filePath": "/resources/ict/past-paper-answers/ict-past-paper-answers-2011.pdf",
+      "linkedPaperId": "ict-past-paper-2011"
     },
     {
-      "id": "ict-notes-2024-1",
+      "id": "ict-past-paper-answers-2012",
       "subject": "ict",
-      "type": "notes",
-      "title": "Database Fundamentals",
-      "filePath": "/resources/ict/notes/database-fundamentals.pdf",
-      "description": "Introduction to databases"
+      "type": "past-paper-answers",
+      "year": 2012,
+      "title": "ICT Past Paper Answers 2012",
+      "filePath": "/resources/ict/past-paper-answers/ict-past-paper-answers-2012.pdf",
+      "linkedPaperId": "ict-past-paper-2012"
     },
     {
-      "id": "ict-past-paper-2023",
+      "id": "ict-past-paper-answers-2013",
       "subject": "ict",
-      "type": "past-papers",
-      "year": 2023,
-      "title": "ICT Past Paper 2023",
-      "filePath": "/resources/ict/past-papers/ict-2023.pdf",
-      "hasAnswers": true
+      "type": "past-paper-answers",
+      "year": 2013,
+      "title": "ICT Past Paper Answers 2013",
+      "filePath": "/resources/ict/past-paper-answers/ict-past-paper-answers-2013.pdf",
+      "linkedPaperId": "ict-past-paper-2013"
     },
     {
-      "id": "ict-provincial-paper-2023",
+      "id": "ict-past-paper-answers-2014",
       "subject": "ict",
-      "type": "provincial-papers",
-      "year": 2023,
-      "title": "ICT Provincial Paper 2023",
-      "filePath": "/resources/ict/provincial-papers/ict-provincial-2023.pdf",
-      "hasAnswers": false
+      "type": "past-paper-answers",
+      "year": 2014,
+      "title": "ICT Past Paper Answers 2014",
+      "filePath": "/resources/ict/past-paper-answers/ict-past-paper-answers-2014.pdf",
+      "linkedPaperId": "ict-past-paper-2014"
     },
     {
-      "id": "accounting-notes-2024-1",
-      "subject": "accounting",
-      "type": "notes",
-      "title": "Financial Statements",
-      "filePath": "/resources/accounting/notes/financial-statements.pdf",
-      "description": "Understanding balance sheets and income statements"
+      "id": "ict-past-paper-answers-2015",
+      "subject": "ict",
+      "type": "past-paper-answers",
+      "year": 2015,
+      "title": "ICT Past Paper Answers 2015",
+      "filePath": "/resources/ict/past-paper-answers/ict-past-paper-answers-2015.pdf",
+      "linkedPaperId": "ict-past-paper-2015"
     },
     {
-      "id": "accounting-unit-paper-2024-1",
-      "subject": "accounting",
-      "type": "unit-papers",
-      "title": "Unit 1 Test Paper",
-      "filePath": "/resources/accounting/unit-papers/unit-1-test.pdf",
-      "hasAnswers": true
+      "id": "ict-past-paper-answers-2016",
+      "subject": "ict",
+      "type": "past-paper-answers",
+      "year": 2016,
+      "title": "ICT Past Paper Answers 2016",
+      "filePath": "/resources/ict/past-paper-answers/ict-past-paper-answers-2016.pdf",
+      "linkedPaperId": "ict-past-paper-2016"
     },
     {
-      "id": "business-model-paper-2024",
-      "subject": "business-studies",
-      "type": "model-papers",
-      "year": 2024,
-      "title": "Business Studies Model Paper 2024",
-      "filePath": "/resources/business-studies/model-papers/business-model-2024.pdf",
-      "hasAnswers": true
+      "id": "ict-past-paper-answers-2017",
+      "subject": "ict",
+      "type": "past-paper-answers",
+      "year": 2017,
+      "title": "ICT Past Paper Answers 2017",
+      "filePath": "/resources/ict/past-paper-answers/ict-past-paper-answers-2017.pdf",
+      "linkedPaperId": "ict-past-paper-2017"
+    },
+    {
+      "id": "ict-past-paper-answers-2018",
+      "subject": "ict",
+      "type": "past-paper-answers",
+      "year": 2018,
+      "title": "ICT Past Paper Answers 2018",
+      "filePath": "/resources/ict/past-paper-answers/ict-past-paper-answers-2018.pdf",
+      "linkedPaperId": "ict-past-paper-2018"
+    },
+    {
+      "id": "ict-past-paper-answers-2019",
+      "subject": "ict",
+      "type": "past-paper-answers",
+      "year": 2019,
+      "title": "ICT Past Paper Answers 2019",
+      "filePath": "/resources/ict/past-paper-answers/ict-past-paper-answers-2019.pdf",
+      "linkedPaperId": "ict-past-paper-2019"
+    },
+    {
+      "id": "ict-past-paper-answers-2020",
+      "subject": "ict",
+      "type": "past-paper-answers",
+      "year": 2020,
+      "title": "ICT Past Paper Answers 2020",
+      "filePath": "/resources/ict/past-paper-answers/ict-past-paper-answers-2020.pdf",
+      "linkedPaperId": "ict-past-paper-2020"
+    },
+    {
+      "id": "ict-past-paper-answers-2021",
+      "subject": "ict",
+      "type": "past-paper-answers",
+      "year": 2021,
+      "title": "ICT Past Paper Answers 2021",
+      "filePath": "/resources/ict/past-paper-answers/ict-past-paper-answers-2021.pdf",
+      "linkedPaperId": "ict-past-paper-2021"
+    },
+    {
+      "id": "ict-past-paper-answers-2022",
+      "subject": "ict",
+      "type": "past-paper-answers",
+      "year": 2022,
+      "title": "ICT Past Paper Answers 2022",
+      "filePath": "/resources/ict/past-paper-answers/ict-past-paper-answers-2022.pdf",
+      "linkedPaperId": "ict-past-paper-2022"
     }
   ]
 }
