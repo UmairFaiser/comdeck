@@ -26,13 +26,16 @@ export default function SubjectPageClient({
     <div className="min-h-screen bg-[oklch(0.10_0_0)]">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <header className="mb-8">
-          <div className="flex items-center gap-4">
-            <BackButton href="/" label="Back to Home" />
-            <h1 className="text-3xl font-bold text-[oklch(0.90_0_0)]">
+          <div className="grid grid-cols-3 items-center">
+            <div className="justify-self-start">
+              <BackButton href="/" label="Back to Home" />
+            </div>
+            <h1 className="text-3xl font-bold text-[oklch(0.90_0_0)] justify-self-center text-center">
               {subjectLabel}
             </h1>
+            <div />
           </div>
-          <p className="mt-2 text-[oklch(0.60_0_0)]">
+          <p className="mt-2 text-[oklch(0.60_0_0)] text-center">
             {resources.length} resource{resources.length !== 1 ? "s" : ""}{" "}
             available
           </p>
