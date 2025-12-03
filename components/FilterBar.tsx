@@ -8,6 +8,7 @@ interface FilterBarProps {
   resourceTypes?: ResourceType[];
   years?: number[];
   showHasAnswers?: boolean;
+  lecturers?: string[];
 }
 
 export default function FilterBar({
@@ -15,6 +16,7 @@ export default function FilterBar({
   resourceTypes,
   years,
   showHasAnswers = false,
+  lecturers,
 }: FilterBarProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -34,6 +36,7 @@ export default function FilterBar({
   const currentType = searchParams.get("type") || "";
   const currentYear = searchParams.get("year") || "";
   const currentHasAnswers = searchParams.get("hasAnswers") || "";
+  const currentLecturer = searchParams.get("lecturer") || "";
 
   return (
     <div className="flex flex-wrap gap-3">
@@ -77,6 +80,21 @@ export default function FilterBar({
           {years.map((year) => (
             <option key={year} value={year.toString()}>
               {year}
+            </option>
+          ))}
+        </select>
+      )}
+
+      {lecturers && lecturers.length > 0 && (
+        <select
+          value={currentLecturer}
+          onChange={(e) => updateFilter("lecturer", e.target.value || null)}
+          className="rounded border border-[oklch(0.20_0_0)] bg-[oklch(0.12_0_0)] px-3 py-2 text-sm text-[oklch(0.90_0_0)] transition-colors focus:border-[oklch(0.55_0.15_250)] focus:outline-none"
+        >
+          <option value="">All Lecturers</option>
+          {lecturers.map((name: string) => (
+            <option key={name} value={name}>
+              {name}
             </option>
           ))}
         </select>

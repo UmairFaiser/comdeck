@@ -33,6 +33,11 @@ export default function ResourceCard({
                 {resource.year}
               </span>
             )}
+            {resource.lecturer && (
+              <span className="inline-flex items-center rounded border border-[oklch(0.20_0_0)] bg-[oklch(0.10_0_0)] px-2 py-1 text-xs text-[oklch(0.70_0_0)]">
+                {resource.lecturer}
+              </span>
+            )}
             {resource.hasAnswers && answerResource ? (
               <Link
                 href={`/${answerResource.subject}/${answerResource.type}?id=${answerResource.id}`}

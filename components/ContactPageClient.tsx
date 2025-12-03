@@ -3,9 +3,7 @@ import { useState } from "react";
 
 export default function ContactPageClient() {
   const contacts = [
-    { label: "General Inquiries", phone: "+94 71 000 0000" },
     { label: "Credits / Removals", phone: "+94 77 111 1111" },
-    { label: "Support", phone: "+94 75 222 2222" },
     { label: "Submit a resource", phone: "+94 75 222 2222" }
   ];
 

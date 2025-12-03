@@ -11,7 +11,7 @@ import ResourceCard from "@/components/ResourceCard";
 import SearchBar from "@/components/SearchBar";
 import FilterBar from "@/components/FilterBar";
 import BackButton from "@/components/BackButton";
-import { getAvailableYears } from "@/lib/resources";
+import { getAvailableYears, getAvailableLecturers } from "@/lib/resources";
 
 interface SearchPageProps {
   searchParams: Promise<{
@@ -20,6 +20,7 @@ interface SearchPageProps {
     type?: string;
     year?: string;
     hasAnswers?: string;
+    lecturer?: string;
   }>;
 }
 
@@ -33,7 +34,7 @@ function SearchResults({ searchParams }: SearchPageProps) {
 
 async function SearchResultsContent({ searchParams }: SearchPageProps) {
   const params = await searchParams;
-  const { q, subject, type, year, hasAnswers } = params;
+  const { q, subject, type, year, hasAnswers, lecturer } = params;
 
   const filters: ResourceFilters = {};
 
@@ -54,19 +55,26 @@ async function SearchResultsContent({ searchParams }: SearchPageProps) {
   } else if (hasAnswers === "false") {
     filters.hasAnswers = false;
   }
+  if (lecturer) {
+    filters.lecturer = lecturer;
+  }
 
   const results = filterResources(filters);
   const availableYears = getAvailableYears();
+  const availableLecturers = getAvailableLecturers();
 
   return (
     <div className="min-h-screen bg-[oklch(0.10_0_0)]">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <header className="mb-8">
-          <div className="flex items-center gap-4">
-            <BackButton href="/" label="Back to Home" />
-            <h1 className="text-3xl font-bold text-[oklch(0.90_0_0)] text-center">
+          <div className="grid grid-cols-3 items-center">
+            <div className="justify-self-start">
+              <BackButton href="/" label="Back to Home" />
+            </div>
+            <h1 className="justify-self-center text-3xl font-bold text-[oklch(0.90_0_0)]">
               Search Results
             </h1>
+            <div />
           </div>
           {q && (
             <p className="mt-2 text-[oklch(0.60_0_0)] text-center">
@@ -87,6 +95,7 @@ async function SearchResultsContent({ searchParams }: SearchPageProps) {
               resourceTypes={RESOURCE_TYPES}
               years={availableYears}
               showHasAnswers={true}
+              lecturers={availableLecturers}
             />
           </Suspense>
         </div>

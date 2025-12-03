@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import {
   getResourcesByType,
   getAvailableYears,
+  getAvailableLecturers,
   getResourceTypesForSubject,
   SUBJECTS,
   RESOURCE_TYPES,
@@ -41,6 +42,7 @@ export default async function ResourceTypePage({
   let resources = getResourcesByType(subjectKey, typeKey);
   const availableTypes = getResourceTypesForSubject(subjectKey);
   const availableYears = getAvailableYears(subjectKey, typeKey);
+  const availableLecturers = getAvailableLecturers(subjectKey, typeKey);
 
   // Filter by year if provided
   if (year) {
@@ -77,7 +79,7 @@ export default async function ResourceTypePage({
           {availableYears.length > 0 && (
             <div className="mb-6">
               <Suspense fallback={<div>Loading filters...</div>}>
-                <FilterBar years={availableYears} />
+                <FilterBar years={availableYears} lecturers={availableLecturers} />
               </Suspense>
             </div>
           )}

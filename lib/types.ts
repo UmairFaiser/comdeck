@@ -7,7 +7,9 @@ export type ResourceType =
   | "past-paper-answers"
   | "provincial-papers"
   | "unit-papers"
-  | "model-papers";
+  | "model-papers"
+  | "school-papers"
+  | "school-paper-answers";
 
 export interface Resource {
   id: string;
@@ -19,6 +21,8 @@ export interface Resource {
   linkedPaperId?: string; // For answers that link to a question paper
   hasAnswers?: boolean; // For papers that may have answers
   description?: string;
+  lecturer?: string; // Display name, e.g., "Lakshitha Sir"
+  school?: string; // For school-level papers, e.g., "St Joseph's"
 }
 
 export interface ResourceFilters {
@@ -27,5 +31,6 @@ export interface ResourceFilters {
   year?: number;
   hasAnswers?: boolean;
   searchQuery?: string;
+  lecturer?: string; // Filter by lecturer display name
 }
 

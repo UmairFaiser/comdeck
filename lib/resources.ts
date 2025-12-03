@@ -76,6 +76,10 @@ export function filterResources(filters: ResourceFilters): Resource[] {
     filtered = filtered.filter((r) => r.hasAnswers === filters.hasAnswers);
   }
 
+  if (filters.lecturer) {
+    filtered = filtered.filter((r) => r.lecturer === filters.lecturer);
+  }
+
   if (filters.searchQuery) {
     const normalize = (text: string) =>
       text
@@ -97,6 +101,8 @@ export function filterResources(filters: ResourceFilters): Resource[] {
         r.type,
         r.year ? String(r.year) : "",
         r.id,
+        r.lecturer ?? "",
+        r.school ?? "",
       ];
       const searchText = normalize(searchTextParts.join(" "));
 
@@ -168,6 +174,8 @@ export const RESOURCE_TYPES: ResourceType[] = [
   "provincial-papers",
   "unit-papers",
   "model-papers",
+  "school-papers",
+  "school-paper-answers",
 ];
 
 export const SUBJECT_LABELS: Record<Subject, string> = {
@@ -185,5 +193,25 @@ export const RESOURCE_TYPE_LABELS: Record<ResourceType, string> = {
   "provincial-papers": "Provincial Papers",
   "unit-papers": "Unit Papers",
   "model-papers": "Model Papers",
+  "school-papers": "School Papers",
+  "school-paper-answers": "School Paper Answers",
 };
+
+export function getAvailableLecturers(
+  subject?: Subject,
+  type?: ResourceType
+): string[] {
+  let filtered = allResources;
+  if (subject) {
+    filtered = filtered.filter((r) => r.subject === subject);
+  }
+  if (type) {
+    filtered = filtered.filter((r) => r.type === type);
+  }
+  const lecturers = filtered
+    .map((r) => r.lecturer)
+    .filter((l): l is string => !!l)
+    .sort((a, b) => a.localeCompare(b));
+  return Array.from(new Set(lecturers));
+}
 

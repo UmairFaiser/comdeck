@@ -1,102 +1,116 @@
 {
   "resources": [
     {
-      "id": "accounting-short-notes-full-syllabus",
+      "id": "accounting-short-notes-full-syllabus-lakshitha-sir",
       "subject": "accounting",
       "type": "short-notes",
       "title": "Accounting Short Notes: Full Syllabus",
-      "filePath": "/resources/accounting/short-notes/accounting-short-notes-full-syllabus.pdf"
+      "filePath": "/resources/accounting/short-notes/accounting-short-notes-full-syllabus.pdf",
+      "lecturer": "Lakshitha Sir"
     },
     {
-      "id": "ict-short-notes-css",
+      "id": "ict-short-notes-css-khalifa-sir",
       "subject": "ict",
       "type": "short-notes",
       "title": "ICT Short Notes: CSS",
-      "filePath": "/resources/ict/short-notes/ict-short-notes-css.pdf"
+      "filePath": "/resources/ict/short-notes/ict-short-notes-css-khalifa-sir.pdf",
+      "lecturer": "Khalifa Sir"
     },
     {
-      "id": "ict-short-notes-data-representation",
+      "id": "ict-short-notes-data-representation-khalifa-sir",
       "subject": "ict",
       "type": "short-notes",
       "title": "ICT Short Notes: Data Representation",
-      "filePath": "/resources/ict/short-notes/ict-short-notes-data-representation.pdf"
+      "filePath": "/resources/ict/short-notes/ict-short-notes-data-representation-khalifa-sir.pdf",
+      "lecturer": "Khalifa Sir"
     },
     {
-      "id": "ict-short-notes-database",
+      "id": "ict-short-notes-database-khalifa-sir",
       "subject": "ict",
       "type": "short-notes",
       "title": "ICT Short Notes: Database",
-      "filePath": "/resources/ict/short-notes/ict-short-notes-database.pdf"
+      "filePath": "/resources/ict/short-notes/ict-short-notes-database-khalifa-sir.pdf",
+      "lecturer": "Khalifa Sir"
     },
     {
-      "id": "ict-short-notes-digital-circuits",
+      "id": "ict-short-notes-digital-circuits-khalifa-sir",
       "subject": "ict",
       "type": "short-notes",
       "title": "ICT Short Notes: Digital Circuits",
-      "filePath": "/resources/ict/short-notes/ict-short-notes-digital-circuits.pdf"
+      "filePath": "/resources/ict/short-notes/ict-short-notes-digital-circuits-khalifa-sir.pdf",
+      "lecturer": "Khalifa Sir"
     },
     {
-      "id": "ict-short-notes-full-syllabus",
+      "id": "ict-short-notes-full-syllabus-khalifa-sir",
       "subject": "ict",
       "type": "short-notes",
       "title": "ICT Short Notes: Full Syllabus",
-      "filePath": "/resources/ict/short-notes/ict-short-notes-full-syllabus.pdf"
+      "filePath": "/resources/ict/short-notes/ict-short-notes-full-syllabus-khalifa-sir.pdf",
+      "lecturer": "Khalifa Sir"
     },
     {
-      "id": "ict-short-notes-html",
+      "id": "ict-short-notes-html-khalifa-sir",
       "subject": "ict",
       "type": "short-notes",
       "title": "ICT Short Notes: HTML",
-      "filePath": "/resources/ict/short-notes/ict-short-notes-html.pdf"
+      "filePath": "/resources/ict/short-notes/ict-short-notes-html-khalifa-sir.pdf",
+      "lecturer": "Khalifa Sir"
     },
     {
-      "id": "ict-short-notes-information-systems",
+      "id": "ict-short-notes-information-systems-khalifa-sir",
       "subject": "ict",
       "type": "short-notes",
       "title": "ICT Short Notes: Information Systems",
-      "filePath": "/resources/ict/short-notes/ict-short-notes-information-systems.pdf"
+      "filePath": "/resources/ict/short-notes/ict-short-notes-information-systems-khalifa-sir.pdf",
+      "lecturer": "Khalifa Sir"
     },
     {
-      "id": "ict-short-notes-internet-of-things",
+      "id": "ict-short-notes-internet-of-things-khalifa-sir",
       "subject": "ict",
       "type": "short-notes",
       "title": "ICT Short Notes: Internet of Things",
-      "filePath": "/resources/ict/short-notes/ict-short-notes-internet-of-things.pdf"
+      "filePath": "/resources/ict/short-notes/ict-short-notes-internet-of-things-khalifa-sir.pdf",
+      "lecturer": "Khalifa Sir"
     },
     {
-      "id": "ict-short-notes-lessons-1and2",
+      "id": "ict-short-notes-lessons-1and2-khalifa-sir",
       "subject": "ict",
       "type": "short-notes",
       "title": "ICT Short Notes: Lessons 1 and 2",
-      "filePath": "/resources/ict/short-notes/ict-short-notes-lessons-1and2.pdf"
+      "filePath": "/resources/ict/short-notes/ict-short-notes-lessons-1and2-khalifa-sir.pdf",
+      "lecturer": "Khalifa Sir"
     },
     {
-      "id": "ict-short-notes-networking",
+      "id": "ict-short-notes-networking-khalifa-sir",
       "subject": "ict",
       "type": "short-notes",
       "title": "ICT Short Notes: Networking",
-      "filePath": "/resources/ict/short-notes/ict-short-notes-networking.pdf"
+      "filePath": "/resources/ict/short-notes/ict-short-notes-networking-khalifa-sir.pdf",
+      "lecturer": "Khalifa Sir"
     },
     {
-      "id": "ict-short-notes-operating-system",
+      "id": "ict-short-notes-operating-system-khalifa-sir",
       "subject": "ict",
       "type": "short-notes",
       "title": "ICT Short Notes: Operating System",
-      "filePath": "/resources/ict/short-notes/ict-short-notes-operating-system.pdf"
+      "filePath": "/resources/ict/short-notes/ict-short-notes-operating-system-khalifa-sir.pdf",
+      "lecturer": "Khalifa Sir"
     },
     {
-      "id": "ict-short-notes-php",
+      "id": "ict-short-notes-php-khalifa-sir",
       "subject": "ict",
       "type": "short-notes",
       "title": "ICT Short Notes: PHP",
-      "filePath": "/resources/ict/short-notes/ict-short-notes-php.pdf"
+      "filePath": "/resources/ict/short-notes/ict-short-notes-php-khalifa-sir.pdf",
+      "lecturer": "Khalifa Sir"
     },
     {
-      "id": "ict-short-notes-programming",
+      "id": "ict-short-notes-programming-khalifa-sir",
       "subject": "ict",
       "type": "short-notes",
       "title": "ICT Short Notes: Programming",
-      "filePath": "/resources/ict/short-notes/ict-short-notes-programming.pdf"
+      "filePath": "/resources/ict/short-notes/ict-short-notes-programming-khalifa-sir.pdf",
+      "lecturer": "Khalifa Sir"
     },
     {
       "id": "ict-past-paper-answers-2011",
