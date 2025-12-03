@@ -11,6 +11,7 @@ import ResourceCard from "@/components/ResourceCard";
 import SearchBar from "@/components/SearchBar";
 import FilterBar from "@/components/FilterBar";
 import BackButton from "@/components/BackButton";
+import Spinner from "@/components/ui/spinner";
 import { getAvailableYears, getAvailableLecturers } from "@/lib/resources";
 
 interface SearchPageProps {
@@ -26,7 +27,13 @@ interface SearchPageProps {
 
 function SearchResults({ searchParams }: SearchPageProps) {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense
+      fallback={
+        <div className="flex items-center justify-center py-8">
+          <Spinner variant="ellipsis" className="text-[oklch(0.70_0_0)]" />
+        </div>
+      }
+    >
       <SearchResultsContent searchParams={searchParams} />
     </Suspense>
   );
@@ -89,7 +96,13 @@ async function SearchResultsContent({ searchParams }: SearchPageProps) {
         </div>
 
         <div className="mb-8">
-          <Suspense fallback={<div>Loading filters...</div>}>
+          <Suspense
+            fallback={
+              <div className="flex items-center justify-center py-6">
+                <Spinner variant="ring" className="text-[oklch(0.70_0_0)]" />
+              </div>
+            }
+          >
             <FilterBar
               subjects={SUBJECTS}
               resourceTypes={RESOURCE_TYPES}

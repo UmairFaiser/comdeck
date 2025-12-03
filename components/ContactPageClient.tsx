@@ -3,8 +3,8 @@ import { useState } from "react";
 
 export default function ContactPageClient() {
   const contacts = [
-    { label: "Credits / Removals", phone: "+94 77 111 1111" },
-    { label: "Submit a resource", phone: "+94 75 222 2222" }
+    { label: "Credits / Removals", phone: "Will be added soon..." },
+    { label: "Submit a resource", phone: "Will be added soon..." }
   ];
 
   const [copied, setCopied] = useState<string | null>(null);

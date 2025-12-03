@@ -16,6 +16,7 @@ import ResourceCard from "@/components/ResourceCard";
 import ResourceTypeTabs from "@/components/ResourceTypeTabs";
 import FilterBar from "@/components/FilterBar";
 import BackButton from "@/components/BackButton";
+import Spinner from "@/components/ui/spinner";
 
 interface ResourceTypePageProps {
   params: Promise<{ subject: string; resourceType: string }>;
@@ -78,7 +79,13 @@ export default async function ResourceTypePage({
         <div className="mt-8">
           {availableYears.length > 0 && (
             <div className="mb-6">
-              <Suspense fallback={<div>Loading filters...</div>}>
+              <Suspense
+                fallback={
+                  <div className="flex items-center justify-center py-6">
+                    <Spinner variant="ring" className="text-[oklch(0.70_0_0)]" />
+                  </div>
+                }
+              >
                 <FilterBar years={availableYears} lecturers={availableLecturers} />
               </Suspense>
             </div>
