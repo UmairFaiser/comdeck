@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
+import NavBar from "../components/NavBar";
+import DisclaimerBanner from "../components/DisclaimerBanner";
 
 const sans = Nunito({
   weight: ["400", "600", "700"],
@@ -51,7 +53,11 @@ export default function RootLayout({
       <body
         className={`${sans.variable} ${mono.variable} ${serif.variable} antialiased`}
       >
-        {children}
+        <div className="sticky top-0 z-50">
+          <NavBar />
+          <DisclaimerBanner />
+        </div>
+        <main>{children}</main>
       </body>
     </html>
   );
