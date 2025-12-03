@@ -10,6 +10,11 @@
   --accent-hover: oklch(0.60 0.15 250);
 }
 
+html {
+  /* Prevent layout shift when vertical scrollbar appears/disappears */
+  scrollbar-gutter: stable both-edges;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

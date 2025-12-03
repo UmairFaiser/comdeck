@@ -4,6 +4,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "../components/NavBar";
 import DisclaimerBanner from "../components/DisclaimerBanner";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const sans = Nunito({
   weight: ["400", "600", "700"],
@@ -58,6 +60,8 @@ export default function RootLayout({
           <DisclaimerBanner />
         </div>
         <main>{children}</main>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

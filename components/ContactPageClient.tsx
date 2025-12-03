@@ -6,6 +6,7 @@ export default function ContactPageClient() {
     { label: "General Inquiries", phone: "+94 71 000 0000" },
     { label: "Credits / Removals", phone: "+94 77 111 1111" },
     { label: "Support", phone: "+94 75 222 2222" },
+    { label: "Submit a resource", phone: "+94 75 222 2222" }
   ];
 
   const [copied, setCopied] = useState<string | null>(null);
