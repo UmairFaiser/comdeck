@@ -12,7 +12,7 @@ export default function ContactPage() {
         <header className="mb-6">
           <h1 className="text-3xl font-bold text-center">Contact</h1>
           <p className="mt-2 text-center text-text-secondary">
-            Reach us via whatsapp through the numbers below if you need to submit a resource, a feature request, a complaint or any other matters regarding the website.
+            Reach us via whatsapp through the numbers below if you need to submit a resource, a feature request, a complaint or any other inquiries regarding the website.
           </p>
         </header>
 
