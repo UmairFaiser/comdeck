@@ -77,14 +77,43 @@ export function filterResources(filters: ResourceFilters): Resource[] {
   }
 
   if (filters.searchQuery) {
-    const query = filters.searchQuery.toLowerCase();
-    filtered = filtered.filter(
-      (r) =>
-        r.title.toLowerCase().includes(query) ||
-        r.description?.toLowerCase().includes(query) ||
-        r.subject.toLowerCase().includes(query) ||
-        r.type.toLowerCase().includes(query)
-    );
+    const normalize = (text: string) =>
+      text
+        .toLowerCase()
+        .replace(/[\-_\/]/g, " ")
+        .replace(/[^a-z0-9\s]/g, "")
+        .replace(/\s+/g, " ")
+        .trim();
+
+    const tokenize = (text: string) => normalize(text).split(" ").filter(Boolean);
+
+    const tokens = tokenize(filters.searchQuery);
+
+    filtered = filtered.filter((r) => {
+      const searchTextParts = [
+        r.title,
+        r.description ?? "",
+        r.subject,
+        r.type,
+        r.year ? String(r.year) : "",
+        r.id,
+      ];
+      const searchText = normalize(searchTextParts.join(" "));
+
+      // All query tokens must be present somewhere in the resource's searchable text
+      return tokens.every((t) => {
+        // Simple plural/variant normalization for common terms
+        const variants = new Set<string>([t]);
+        if (t === "note") variants.add("notes");
+        if (t === "answer") variants.add("answers");
+        if (t === "paper") variants.add("papers");
+        if (t === "pastpaper") variants.add("past paper");
+        if (t === "shortnotes") variants.add("short notes");
+
+        // Match if any variant appears in the search text
+        return Array.from(variants).some((v) => searchText.includes(v));
+      });
+    });
   }
 
   return filtered;
