@@ -27,6 +27,7 @@ export interface Resource {
   videoUrl?: string; // Optional: YouTube or other video link
   chapter?: string; // Optional: Chapter grouping for videos
   day?: number; // Optional: Day number within chapter for videos
+  series?: string; // Optional: Series label, e.g., Revision/Theory/Fast Track
 }
 
 export interface ResourceFilters {
@@ -37,4 +38,3 @@ export interface ResourceFilters {
   searchQuery?: string;
   lecturer?: string; // Filter by lecturer display name
 }
-

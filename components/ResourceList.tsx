@@ -53,7 +53,12 @@ export default function ResourceList({
         {sortedGroups.map(({ chapter, items }) => (
           <section key={chapter}>
             <div className="rounded-lg border border-border bg-surface p-4">
-              <h2 className="mb-3 text-xl font-semibold text-foreground">{chapter}</h2>
+              <h2 className="mb-3 text-xl font-semibold text-foreground">
+                {chapter}
+                {items[0]?.series && (
+                  <span className="ml-2 text-sm text-text-secondary">({items[0].series})</span>
+                )}
+              </h2>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {items.map((resource) => (
                   <ResourceCard
