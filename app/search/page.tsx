@@ -30,7 +30,7 @@ function SearchResults({ searchParams }: SearchPageProps) {
     <Suspense
       fallback={
         <div className="flex items-center justify-center py-8">
-          <Spinner variant="ellipsis" className="text-[oklch(0.70_0_0)]" />
+          <Spinner variant="ellipsis" className="text-text-tertiary" />
         </div>
       }
     >
@@ -71,20 +71,20 @@ async function SearchResultsContent({ searchParams }: SearchPageProps) {
   const availableLecturers = getAvailableLecturers();
 
   return (
-    <div className="min-h-screen bg-[oklch(0.10_0_0)]">
+    <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <header className="mb-8">
           <div className="grid grid-cols-3 items-center">
             <div className="justify-self-start">
               <BackButton href="/" label="Back to Home" />
             </div>
-            <h1 className="justify-self-center text-3xl font-bold text-[oklch(0.90_0_0)]">
+            <h1 className="justify-self-center text-3xl font-bold text-foreground">
               Search Results
             </h1>
             <div />
           </div>
           {q && (
-            <p className="mt-2 text-[oklch(0.60_0_0)] text-center">
+            <p className="mt-2 text-text-secondary text-center">
               {results.length} result{results.length !== 1 ? "s" : ""} for "
               {q}"
             </p>
@@ -99,7 +99,7 @@ async function SearchResultsContent({ searchParams }: SearchPageProps) {
           <Suspense
             fallback={
               <div className="flex items-center justify-center py-6">
-                <Spinner variant="ring" className="text-[oklch(0.70_0_0)]" />
+                <Spinner variant="ring" className="text-text-tertiary" />
               </div>
             }
           >
@@ -124,7 +124,7 @@ async function SearchResultsContent({ searchParams }: SearchPageProps) {
             ))}
           </div>
         ) : (
-          <div className="rounded-lg border border-[oklch(0.20_0_0)] bg-[oklch(0.12_0_0)] p-8 text-center">
+          <div className="rounded-lg border border-border bg-surface p-8 text-center">
             <p className="text-[oklch(0.60_0_0)]">
               No resources found matching your search criteria.
             </p>

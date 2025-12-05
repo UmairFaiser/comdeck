@@ -18,41 +18,41 @@ export default function ResourceCard({
   const typeLabel = RESOURCE_TYPE_LABELS[resource.type];
 
   return (
-    <div className="rounded-lg border border-[oklch(0.20_0_0)] bg-[oklch(0.12_0_0)] p-5 transition-all hover:border-[oklch(0.30_0_0)] hover:bg-[oklch(0.14_0_0)]">
+    <div className="rounded-lg border border-border bg-surface p-5 transition-all hover:border-border-hover hover:bg-surface-hover">
       <div className="flex items-start justify-between gap-4">
         <div className="flex-1 min-w-0">
-          <h3 className="text-lg font-semibold text-[oklch(0.90_0_0)] truncate">
+          <h3 className="text-lg font-semibold text-foreground truncate">
             {resource.title}
           </h3>
           <div className="mt-2 flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center rounded border border-[oklch(0.20_0_0)] bg-[oklch(0.10_0_0)] px-2 py-1 text-xs text-[oklch(0.70_0_0)]">
+            <span className="inline-flex items-center rounded border border-border bg-background px-2 py-1 text-xs text-text-tertiary">
               {typeLabel}
             </span>
             {resource.year && (
-              <span className="text-xs text-[oklch(0.60_0_0)]">
+              <span className="text-xs text-text-secondary">
                 {resource.year}
               </span>
             )}
             {resource.lecturer && (
-              <span className="inline-flex items-center rounded border border-[oklch(0.20_0_0)] bg-[oklch(0.10_0_0)] px-2 py-1 text-xs text-[oklch(0.70_0_0)]">
+              <span className="inline-flex items-center rounded border border-border bg-background px-2 py-1 text-xs text-text-tertiary">
                 {resource.lecturer}
               </span>
             )}
             {resource.hasAnswers && answerResource ? (
               <Link
                 href={`/${answerResource.subject}/${answerResource.type}?id=${answerResource.id}`}
-                className="inline-flex items-center rounded border border-[oklch(0.55_0.15_250)] bg-[oklch(0.12_0.05_250)] px-2 py-1 text-xs text-[oklch(0.55_0.15_250)] transition-colors hover:bg-[oklch(0.15_0.05_250)] hover:border-[oklch(0.60_0.15_250)] cursor-pointer"
+                className="inline-flex items-center rounded border border-accent bg-accent-weak-bg px-2 py-1 text-xs text-accent transition-colors hover:bg-accent-weak-bg-hover hover:border-accent-hover cursor-pointer"
               >
                 Answers Available
               </Link>
             ) : resource.hasAnswers ? (
-              <span className="inline-flex items-center rounded border border-[oklch(0.55_0.15_250)] bg-[oklch(0.12_0.05_250)] px-2 py-1 text-xs text-[oklch(0.55_0.15_250)]">
+              <span className="inline-flex items-center rounded border border-accent bg-accent-weak-bg px-2 py-1 text-xs text-accent">
                 Answers Available
               </span>
             ) : null}
           </div>
           {resource.description && (
-            <p className="mt-2 text-sm text-[oklch(0.60_0_0)] line-clamp-2">
+            <p className="mt-2 text-sm text-text-secondary line-clamp-2">
               {resource.description}
             </p>
           )}
@@ -62,14 +62,14 @@ export default function ResourceCard({
         <a
           href={resource.filePath}
           download
-          className="inline-flex items-center justify-center rounded border border-[oklch(0.20_0_0)] bg-transparent px-4 py-2 text-sm font-medium text-[oklch(0.90_0_0)] transition-colors hover:border-[oklch(0.55_0.15_250)] hover:text-[oklch(0.55_0.15_250)]"
+          className="inline-flex items-center justify-center rounded border border-border bg-transparent px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
         >
           Download PDF
         </a>
         {linkedPaper && (
           <Link
             href={`/${linkedPaper.subject}/${linkedPaper.type}?id=${linkedPaper.id}`}
-            className="inline-flex items-center justify-center rounded border border-[oklch(0.55_0.15_250)] bg-transparent px-4 py-2 text-sm font-medium text-[oklch(0.55_0.15_250)] transition-colors hover:border-[oklch(0.60_0.15_250)] hover:text-[oklch(0.60_0.15_250)]"
+            className="inline-flex items-center justify-center rounded border border-accent bg-transparent px-4 py-2 text-sm font-medium text-accent transition-colors hover:border-accent-hover hover:text-accent-hover"
           >
             View Question Paper
           </Link>
@@ -78,4 +78,3 @@ export default function ResourceCard({
     </div>
   );
 }
-

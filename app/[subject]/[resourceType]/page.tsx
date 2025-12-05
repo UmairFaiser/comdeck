@@ -60,17 +60,17 @@ export default async function ResourceTypePage({
   const typeLabel = RESOURCE_TYPE_LABELS[typeKey];
 
   return (
-    <div className="min-h-screen bg-[oklch(0.10_0_0)]">
+    <div className="min-h-screen bg-background">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         <header className="mb-8">
           <div className="flex items-center">
             <BackButton href={`/${subject}`} label={`Back to ${subjectLabel}`} />
-            <h1 className="text-3xl font-bold text-[oklch(0.90_0_0)] text-center">
+            <h1 className="text-3xl font-bold text-foreground text-center">
               {typeLabel}
             </h1>
           </div>
 
-          <p className="mt-2 text-[oklch(0.60_0_0)] text-center">
+          <p className="mt-2 text-text-secondary text-center">
             {resources.length} resource{resources.length !== 1 ? "s" : ""}
           </p>
         </header>
@@ -82,7 +82,7 @@ export default async function ResourceTypePage({
               <Suspense
                 fallback={
                   <div className="flex items-center justify-center py-6">
-                    <Spinner variant="ring" className="text-[oklch(0.70_0_0)]" />
+                    <Spinner variant="ring" className="text-text-tertiary" />
                   </div>
                 }
               >
@@ -102,8 +102,8 @@ export default async function ResourceTypePage({
               ))}
             </div>
           ) : (
-            <div className="rounded-lg border border-[oklch(0.20_0_0)] bg-[oklch(0.12_0_0)] p-8 text-center">
-              <p className="text-[oklch(0.60_0_0)]">
+            <div className="rounded-lg border border-border bg-surface p-8 text-center">
+              <p className="text-text-secondary">
                 No resources found for the selected filters.
               </p>
             </div>

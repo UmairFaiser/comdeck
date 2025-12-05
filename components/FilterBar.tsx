@@ -44,7 +44,7 @@ export default function FilterBar({
         <select
           value={currentSubject}
           onChange={(e) => updateFilter("subject", e.target.value || null)}
-          className="rounded border border-[oklch(0.20_0_0)] bg-[oklch(0.12_0_0)] px-3 py-2 text-sm text-[oklch(0.90_0_0)] transition-colors focus:border-[oklch(0.55_0.15_250)] focus:outline-none"
+          className="rounded border border-border bg-surface px-3 py-2 text-sm text-foreground transition-colors focus:border-accent focus:outline-none"
         >
           <option value="">All Subjects</option>
           {subjects.map((subject) => (
@@ -59,7 +59,7 @@ export default function FilterBar({
         <select
           value={currentType}
           onChange={(e) => updateFilter("type", e.target.value || null)}
-          className="rounded border border-[oklch(0.20_0_0)] bg-[oklch(0.12_0_0)] px-3 py-2 text-sm text-[oklch(0.90_0_0)] transition-colors focus:border-[oklch(0.55_0.15_250)] focus:outline-none"
+          className="rounded border border-border bg-surface px-3 py-2 text-sm text-foreground transition-colors focus:border-accent focus:outline-none"
         >
           <option value="">All Types</option>
           {resourceTypes.map((type) => (
@@ -74,7 +74,7 @@ export default function FilterBar({
         <select
           value={currentYear}
           onChange={(e) => updateFilter("year", e.target.value || null)}
-          className="rounded border border-[oklch(0.20_0_0)] bg-[oklch(0.12_0_0)] px-3 py-2 text-sm text-[oklch(0.90_0_0)] transition-colors focus:border-[oklch(0.55_0.15_250)] focus:outline-none"
+          className="rounded border border-border bg-surface px-3 py-2 text-sm text-foreground transition-colors focus:border-accent focus:outline-none"
         >
           <option value="">All Years</option>
           {years.map((year) => (
@@ -89,7 +89,7 @@ export default function FilterBar({
         <select
           value={currentLecturer}
           onChange={(e) => updateFilter("lecturer", e.target.value || null)}
-          className="rounded border border-[oklch(0.20_0_0)] bg-[oklch(0.12_0_0)] px-3 py-2 text-sm text-[oklch(0.90_0_0)] transition-colors focus:border-[oklch(0.55_0.15_250)] focus:outline-none"
+          className="rounded border border-border bg-surface px-3 py-2 text-sm text-foreground transition-colors focus:border-accent focus:outline-none"
         >
           <option value="">All Lecturers</option>
           {lecturers.map((name: string) => (
@@ -108,8 +108,8 @@ export default function FilterBar({
             }
             className={`rounded border px-3 py-2 text-sm font-medium transition-colors ${
               currentHasAnswers === "true"
-                ? "border-[oklch(0.55_0.15_250)] bg-[oklch(0.12_0.05_250)] text-[oklch(0.55_0.15_250)]"
-                : "border-[oklch(0.20_0_0)] bg-[oklch(0.12_0_0)] text-[oklch(0.90_0_0)] hover:border-[oklch(0.30_0_0)]"
+                ? "border-accent bg-accent-weak-bg text-accent"
+                : "border-border bg-surface text-foreground hover:border-border-hover"
             }`}
           >
             Has Answers
@@ -120,8 +120,8 @@ export default function FilterBar({
             }
             className={`rounded border px-3 py-2 text-sm font-medium transition-colors ${
               currentHasAnswers === "false"
-                ? "border-[oklch(0.55_0.15_250)] bg-[oklch(0.12_0.05_250)] text-[oklch(0.55_0.15_250)]"
-                : "border-[oklch(0.20_0_0)] bg-[oklch(0.12_0_0)] text-[oklch(0.90_0_0)] hover:border-[oklch(0.30_0_0)]"
+                ? "border-accent bg-accent-weak-bg text-accent"
+                : "border-border bg-surface text-foreground hover:border-border-hover"
             }`}
           >
             No Answers

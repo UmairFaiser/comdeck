@@ -14,7 +14,7 @@ export default function BackButton({ href, label }: BackButtonProps) {
     <Link
       href={href}
       aria-label={label || "Home"}
-      className="inline-flex items-center text-[oklch(0.60_0_0)] hover:text-[oklch(0.90_0_0)] transition-colors"
+      className="inline-flex items-center text-text-secondary hover:text-foreground transition-colors"
     >
       <HugeiconsIcon
         icon={Home04Icon}
@@ -25,4 +25,3 @@ export default function BackButton({ href, label }: BackButtonProps) {
     </Link>
   );
 }
-

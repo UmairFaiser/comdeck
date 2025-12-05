@@ -15,14 +15,14 @@ export default function ResourceTypeTabs({
   onTypeSelect,
 }: ResourceTypeTabsProps) {
   return (
-    <div className="border-b border-[oklch(0.20_0_0)]">
+    <div className="border-b border-border">
       <nav className="-mb-px flex space-x-8 overflow-x-auto">
         <button
           onClick={() => onTypeSelect(null)}
           className={`whitespace-nowrap border-b-2 px-1 py-4 text-sm font-medium transition-colors ${
             selectedType === null
-              ? "border-[oklch(0.55_0.15_250)] text-[oklch(0.55_0.15_250)]"
-              : "border-transparent text-[oklch(0.60_0_0)] hover:border-[oklch(0.30_0_0)] hover:text-[oklch(0.90_0_0)]"
+              ? "border-accent text-accent"
+              : "border-transparent text-text-secondary hover:border-border-hover hover:text-foreground"
           }`}
         >
           All
@@ -36,8 +36,8 @@ export default function ResourceTypeTabs({
               onClick={() => onTypeSelect(type)}
               className={`whitespace-nowrap border-b-2 px-1 py-4 text-sm font-medium transition-colors ${
                 isActive
-                  ? "border-[oklch(0.55_0.15_250)] text-[oklch(0.55_0.15_250)]"
-                  : "border-transparent text-[oklch(0.60_0_0)] hover:border-[oklch(0.30_0_0)] hover:text-[oklch(0.90_0_0)]"
+                  ? "border-accent text-accent"
+                  : "border-transparent text-text-secondary hover:border-border-hover hover:text-foreground"
               }`}
             >
               {RESOURCE_TYPE_LABELS[type]}

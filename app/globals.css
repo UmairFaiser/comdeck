@@ -6,8 +6,17 @@
   --surface: oklch(0.12 0 0);
   --border: oklch(0.20 0 0);
   --text-secondary: oklch(0.60 0 0);
+  --text-tertiary: oklch(0.70 0 0);
+  --text-muted: oklch(0.50 0 0);
   --accent: oklch(0.55 0.15 250);
   --accent-hover: oklch(0.60 0.15 250);
+  --accent-weak-bg: oklch(0.12 0.05 250);
+  --accent-weak-bg-hover: oklch(0.15 0.05 250);
+  --surface-hover: oklch(0.14 0 0);
+  --border-hover: oklch(0.30 0 0);
+  --foreground-strong: oklch(0.95 0 0);
+  --banner-bg: oklch(0.20 0.06 70);
+  --banner-text: oklch(0.78 0.12 80);
 }
 
 html {
@@ -21,8 +30,17 @@ html {
   --color-surface: var(--surface);
   --color-border: var(--border);
   --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-muted: var(--text-muted);
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
+  --color-accent-weak-bg: var(--accent-weak-bg);
+  --color-accent-weak-bg-hover: var(--accent-weak-bg-hover);
+  --color-surface-hover: var(--surface-hover);
+  --color-border-hover: var(--border-hover);
+  --color-foreground-strong: var(--foreground-strong);
+  --color-banner-bg: var(--banner-bg);
+  --color-banner-text: var(--banner-text);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --font-serif: var(--font-serif);

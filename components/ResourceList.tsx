@@ -18,8 +18,8 @@ export default function ResourceList({
 
   if (filteredResources.length === 0) {
     return (
-      <div className="mt-8 rounded-lg border border-[oklch(0.20_0_0)] bg-[oklch(0.12_0_0)] p-8 text-center">
-        <p className="text-[oklch(0.60_0_0)]">
+      <div className="mt-8 rounded-lg border border-border bg-surface p-8 text-center">
+        <p className="text-text-secondary">
           No resources found for the selected filter.
         </p>
       </div>
