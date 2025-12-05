@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Nunito } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "../components/NavBar";
@@ -7,10 +6,25 @@ import DisclaimerBanner from "../components/DisclaimerBanner";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const sans = Nunito({
-  weight: ["400", "600", "700"],
+const sans = localFont({
+  src: [
+    {
+      path: "./fonts/nunito/nunito-v32-latin-regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/nunito/nunito-v32-latin-600.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "./fonts/nunito/nunito-v32-latin-700.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
   variable: "--font-sans",
-  subsets: ["latin"],
 });
 
 const mono = localFont({

@@ -172,3 +172,4 @@ export default function Spinner({ variant = 'default', size = 24, className, ...
       return <Default {...common} {...props} />;
   }
 }
+
