@@ -67,8 +67,9 @@ async function SearchResultsContent({ searchParams }: SearchPageProps) {
   }
 
   const results = filterResources(filters);
-  const availableYears = getAvailableYears();
-  const availableLecturers = getAvailableLecturers();
+  // Scope filter options based on the currently selected subject/type
+  const availableYears = getAvailableYears(filters.subject, filters.type);
+  const availableLecturers = getAvailableLecturers(filters.subject, filters.type);
 
   return (
     <div className="min-h-screen bg-background">

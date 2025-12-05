@@ -30,6 +30,8 @@ export default function FilterBar({
       params.delete(key);
     }
     router.push(`${pathname}?${params.toString()}`);
+    // Ensure server components re-render with updated search params
+    router.refresh();
   };
 
   const currentSubject = searchParams.get("subject") || "";
