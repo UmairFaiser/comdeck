@@ -26,6 +26,50 @@ export default function ResourceList({
     );
   }
 
+  // Group videos by chapter and sort by day when viewing videos
+  const isVideosView = (selectedType && selectedType === "videos") ||
+    (!selectedType && filteredResources.every((r) => r.type === "videos"));
+
+  if (isVideosView) {
+    const groups = new Map<string, Resource[]>();
+    for (const r of filteredResources) {
+      const key = r.chapter || "Ungrouped";
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key)!.push(r);
+    }
+
+    const sortedGroups = Array.from(groups.entries()).map(([chapter, items]) => {
+      items.sort((a, b) => {
+        const aDay = a.day ?? Number.MAX_SAFE_INTEGER;
+        const bDay = b.day ?? Number.MAX_SAFE_INTEGER;
+        if (aDay !== bDay) return aDay - bDay;
+        return a.title.localeCompare(b.title);
+      });
+      return { chapter, items };
+    });
+
+    return (
+      <div className="mt-8 space-y-6">
+        {sortedGroups.map(({ chapter, items }) => (
+          <section key={chapter}>
+            <div className="rounded-lg border border-border bg-surface p-4">
+              <h2 className="mb-3 text-xl font-semibold text-foreground">{chapter}</h2>
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                {items.map((resource) => (
+                  <ResourceCard
+                    key={resource.id}
+                    resource={resource}
+                    showLinkedPaper={true}
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
+        ))}
+      </div>
+    );
+  }
+
   return (
     <div className="mt-8">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -40,4 +84,3 @@ export default function ResourceList({
     </div>
   );
 }
-

@@ -9,7 +9,8 @@ export type ResourceType =
   | "unit-papers"
   | "model-papers"
   | "school-papers"
-  | "school-paper-answers";
+  | "school-paper-answers"
+  | "videos";
 
 export interface Resource {
   id: string;
@@ -23,6 +24,9 @@ export interface Resource {
   description?: string;
   lecturer?: string; // Display name, e.g., "Lakshitha Sir"
   school?: string; // For school-level papers, e.g., "St Joseph's"
+  videoUrl?: string; // Optional: YouTube or other video link
+  chapter?: string; // Optional: Chapter grouping for videos
+  day?: number; // Optional: Day number within chapter for videos
 }
 
 export interface ResourceFilters {

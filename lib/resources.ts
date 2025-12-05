@@ -176,6 +176,7 @@ export const RESOURCE_TYPES: ResourceType[] = [
   "model-papers",
   "school-papers",
   "school-paper-answers",
+  "videos",
 ];
 
 export const SUBJECT_LABELS: Record<Subject, string> = {
@@ -186,7 +187,7 @@ export const SUBJECT_LABELS: Record<Subject, string> = {
 };
 
 export const RESOURCE_TYPE_LABELS: Record<ResourceType, string> = {
-  notes: "Notes",
+  "notes": "Notes",
   "short-notes": "Short Notes",
   "past-papers": "Past Papers",
   "past-paper-answers": "Past Paper Answers",
@@ -195,6 +196,7 @@ export const RESOURCE_TYPE_LABELS: Record<ResourceType, string> = {
   "model-papers": "Model Papers",
   "school-papers": "School Papers",
   "school-paper-answers": "School Paper Answers",
+  "videos": "Videos",
 };
 
 export function getAvailableLecturers(

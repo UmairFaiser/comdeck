@@ -4,7 +4,7 @@ This guide explains how to upload and manage resources in Comdeck.
 
 ## Directory Structure
 
-Resources are stored in the `public/resources/` directory, organized by subject and resource type:
+Resources are stored in the `public/resources/` directory, organized by subject and resource type. Video resources use external URLs and do not require file uploads:
 
 ```
 public/
@@ -83,6 +83,7 @@ Open `data/resources.json` and add a new resource object to the `resources` arra
 - `provincial-papers` - Provincial examination papers
 - `unit-papers` - Unit test papers
 - `model-papers` - Model papers
+- `videos` - External video resources (YouTube or other platforms)
 
 #### Subjects:
 
@@ -170,6 +171,30 @@ Then add the answer resource:
 }
 ```
 
+**6. Video Resource (YouTube URL):**
+```json
+{
+  "id": "econ-video-elasticity-intro",
+  "subject": "economics",
+  "type": "videos",
+  "title": "Price Elasticity of Demand — Intro",
+  "filePath": "",
+  "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+  "description": "Short explainer on PED with examples"
+}
+```
+
+### Adding Video URLs
+
+- Set `type` to `videos`
+- Use `videoUrl` with a full URL (YouTube, Vimeo, etc.)
+- Leave `filePath` empty (`""`) since videos are external links
+- Optional fields like `year`, `lecturer`, and `description` are allowed
+
+UI behavior:
+- Cards with `videoUrl` display a "Watch Video" button that opens in a new tab
+- Video resources appear under the "Videos" filter and also in "All" when applicable
+
 ## Important Notes
 
 ### Linking Answers to Papers
@@ -206,10 +231,13 @@ Then add the answer resource:
 ## Quick Checklist
 
 - [ ] PDF file uploaded to correct directory
+- [ ] PDF file uploaded to correct directory (skip for videos)
 - [ ] Resource entry added to `data/resources.json`
 - [ ] Unique ID assigned
 - [ ] Correct subject and type selected
 - [ ] File path matches actual file location
+- [ ] File path matches actual file location (leave empty for videos)
+- [ ] For videos, `videoUrl` is a valid, complete URL
 - [ ] If it's a paper with answers, set `hasAnswers: true`
 - [ ] If it's an answer resource, set `linkedPaperId` to the question paper ID
 - [ ] Year included for papers
@@ -222,6 +250,6 @@ After adding resources:
 1. Restart the development server: `npm run dev`
 2. Navigate to the subject page
 3. Check that the resource appears in the correct category
-4. Verify the download link works
+4. Verify the download link works (or Watch Video opens in a new tab for videos)
 5. If it's a paper with answers, click "Answers Available" to test navigation
 

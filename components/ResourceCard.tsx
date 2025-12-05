@@ -28,6 +28,11 @@ export default function ResourceCard({
             <span className="inline-flex items-center rounded border border-border bg-background px-2 py-1 text-xs text-text-tertiary">
               {typeLabel}
             </span>
+            {resource.day !== undefined && (
+              <span className="inline-flex items-center rounded border border-border bg-background px-2 py-1 text-xs text-text-tertiary">
+                {`Day ${resource.day}`}
+              </span>
+            )}
             {resource.year && (
               <span className="text-xs text-text-secondary">
                 {resource.year}
@@ -59,13 +64,24 @@ export default function ResourceCard({
         </div>
       </div>
       <div className="mt-4 flex flex-wrap gap-2">
-        <a
-          href={resource.filePath}
-          download
-          className="inline-flex items-center justify-center rounded border border-border bg-transparent px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
-        >
-          Download PDF
-        </a>
+        {resource.videoUrl ? (
+          <a
+            href={resource.videoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded border border-accent bg-transparent px-4 py-2 text-sm font-medium text-accent transition-colors hover:border-accent-hover hover:text-accent-hover"
+          >
+            Watch Video
+          </a>
+        ) : (
+          <a
+            href={resource.filePath}
+            download
+            className="inline-flex items-center justify-center rounded border border-border bg-transparent px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
+          >
+            Download PDF
+          </a>
+        )}
         {linkedPaper && (
           <Link
             href={`/${linkedPaper.subject}/${linkedPaper.type}?id=${linkedPaper.id}`}
