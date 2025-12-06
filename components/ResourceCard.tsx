@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
 import { Resource, RESOURCE_TYPE_LABELS } from "@/lib/resources";
 import { getLinkedResource, getAnswerResource } from "@/lib/resources";
+import { useToast } from "@/contexts/ToastContext";
 
 interface ResourceCardProps {
   resource: Resource;
@@ -19,6 +20,7 @@ export default function ResourceCard({
     ? getAnswerResource(resource.id)
     : null;
   const typeLabel = RESOURCE_TYPE_LABELS[resource.type];
+  const { showToast } = useToast();
 
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [showLeftMask, setShowLeftMask] = useState(false);
@@ -129,6 +131,9 @@ export default function ResourceCard({
           <a
             href={resource.filePath}
             download
+            onClick={() => {
+              showToast(`Downloading ${resource.title}...`, "success");
+            }}
             className="inline-flex items-center justify-center rounded border border-border bg-transparent px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
           >
             Download PDF

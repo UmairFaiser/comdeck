@@ -3,7 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "../components/NavBar";
 import ClientDisclaimerBanner from "../components/ClientDisclaimerBanner";
-
+import { ToastProvider } from "../contexts/ToastContext";
+import Toast from "../components/Toast";
 
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -68,13 +69,16 @@ export default function RootLayout({
       <body
         className={`${sans.variable} ${mono.variable} ${serif.variable} antialiased`}
       >
-        <div className="sticky top-0 z-50">
-          <NavBar />
-          <ClientDisclaimerBanner />
-        </div>
-        <main>{children}</main>
-        <Analytics />
-        <SpeedInsights />
+        <ToastProvider>
+          <div className="sticky top-0 z-50">
+            <NavBar />
+            <ClientDisclaimerBanner />
+          </div>
+          <main>{children}</main>
+          <Toast />
+          <Analytics />
+          <SpeedInsights />
+        </ToastProvider>
       </body>
     </html>
   );
