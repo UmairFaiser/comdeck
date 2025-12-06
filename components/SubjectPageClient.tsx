@@ -10,14 +10,12 @@ import ResourceList from "@/components/ResourceList";
 interface SubjectPageClientProps {
   resources: Resource[];
   availableTypes: ResourceType[];
-  subject: string;
   subjectLabel: string;
 }
 
 export default function SubjectPageClient({
   resources,
   availableTypes,
-  subject,
   subjectLabel,
 }: SubjectPageClientProps) {
   const [selectedType, setSelectedType] = useState<ResourceType | null>(null);

@@ -3,9 +3,9 @@ import {
   filterResources,
   SUBJECTS,
   RESOURCE_TYPES,
-  SUBJECT_LABELS,
-  RESOURCE_TYPE_LABELS,
   type ResourceFilters,
+  type Subject,
+  type ResourceType,
 } from "@/lib/resources";
 import ResourceCard from "@/components/ResourceCard";
 import SearchBar from "@/components/SearchBar";
@@ -48,11 +48,11 @@ async function SearchResultsContent({ searchParams }: SearchPageProps) {
   if (q) {
     filters.searchQuery = q;
   }
-  if (subject && SUBJECTS.includes(subject as any)) {
-    filters.subject = subject as any;
+  if (subject && SUBJECTS.includes(subject as Subject)) {
+    filters.subject = subject as Subject;
   }
-  if (type && RESOURCE_TYPES.includes(type as any)) {
-    filters.type = type as any;
+  if (type && RESOURCE_TYPES.includes(type as ResourceType)) {
+    filters.type = type as ResourceType;
   }
   if (year) {
     filters.year = parseInt(year, 10);
@@ -86,8 +86,7 @@ async function SearchResultsContent({ searchParams }: SearchPageProps) {
           </div>
           {q && (
             <p className="mt-2 text-text-secondary text-center">
-              {results.length} result{results.length !== 1 ? "s" : ""} for "
-              {q}"
+              {results.length} result{results.length !== 1 ? "s" : ""} for &quot;{q}&quot;
             </p>
           )}
         </header>

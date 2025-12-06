@@ -2,16 +2,16 @@
 import { useEffect, useState } from "react";
 
 export default function DisclaimerBanner() {
-  const [dismissed, setDismissed] = useState(false);
+  const [dismissed, setDismissed] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem("comdeck_disclaimer_dismissed") === "true";
+    } catch {}
+    return false;
+  });
   const [hiding, setHiding] = useState(false);
 
   useEffect(() => {
-    try {
-      const stored = localStorage.getItem("comdeck_disclaimer_dismissed");
-      if (stored === "true") setDismissed(true);
-    } catch (_) {
-      // ignore storage access issues
-    }
+    // no-op: state is initialized lazily from localStorage
   }, []);
 
   const handleDismiss = () => {
@@ -20,7 +20,7 @@ export default function DisclaimerBanner() {
       setDismissed(true);
       try {
         localStorage.setItem("comdeck_disclaimer_dismissed", "true");
-      } catch (_) {}
+      } catch {}
     }, 300);
   };
 

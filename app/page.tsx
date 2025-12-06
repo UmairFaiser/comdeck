@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SUBJECTS, SUBJECT_LABELS } from "@/lib/resources";
+import { SUBJECTS } from "@/lib/resources";
 import SubjectCard from "@/components/SubjectCard";
 import SearchBar from "@/components/SearchBar";
 

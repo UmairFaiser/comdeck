@@ -4,7 +4,6 @@ import {
   getResourcesByType,
   getAvailableYears,
   getAvailableLecturers,
-  getResourceTypesForSubject,
   SUBJECTS,
   RESOURCE_TYPES,
   SUBJECT_LABELS,
@@ -13,7 +12,6 @@ import {
   type ResourceType,
 } from "@/lib/resources";
 import ResourceCard from "@/components/ResourceCard";
-import ResourceTypeTabs from "@/components/ResourceTypeTabs";
 import FilterBar from "@/components/FilterBar";
 import BackButton from "@/components/BackButton";
 import Spinner from "@/components/ui/spinner";
@@ -41,7 +39,6 @@ export default async function ResourceTypePage({
   }
 
   let resources = getResourcesByType(subjectKey, typeKey);
-  const availableTypes = getResourceTypesForSubject(subjectKey);
   const availableYears = getAvailableYears(subjectKey, typeKey);
   const availableLecturers = getAvailableLecturers(subjectKey, typeKey);
 
@@ -51,10 +48,10 @@ export default async function ResourceTypePage({
     resources = resources.filter((r) => r.year === yearNum);
   }
 
-  // Highlight specific resource if ID is provided
-  const highlightedResource = id
-    ? resources.find((r) => r.id === id)
-    : null;
+  // If a specific resource ID is provided, show only that resource
+  if (id) {
+    resources = resources.filter((r) => r.id === id);
+  }
 
   const subjectLabel = SUBJECT_LABELS[subjectKey];
   const typeLabel = RESOURCE_TYPE_LABELS[typeKey];
