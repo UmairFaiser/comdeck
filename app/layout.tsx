@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "../components/NavBar";
-import DisclaimerBanner from "../components/DisclaimerBanner";
+import ClientDisclaimerBanner from "../components/ClientDisclaimerBanner";
+
+
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -54,10 +56,7 @@ const serif = localFont({
   variable: "--font-serif",
 });
 
-export const metadata: Metadata = {
-  title: "Comdeck",
-  description: "A directory for advance level commerce papers",
-};
+
 
 export default function RootLayout({
   children,
@@ -71,7 +70,7 @@ export default function RootLayout({
       >
         <div className="sticky top-0 z-50">
           <NavBar />
-          <DisclaimerBanner />
+          <ClientDisclaimerBanner />
         </div>
         <main>{children}</main>
         <Analytics />
