@@ -4,6 +4,7 @@ import {
   getResourcesByType,
   getAvailableYears,
   getAvailableLecturers,
+  getAvailableSeries,
   SUBJECTS,
   RESOURCE_TYPES,
   SUBJECT_LABELS,
@@ -14,11 +15,12 @@ import {
 import ResourceCard from "@/components/ResourceCard";
 import FilterBar from "@/components/FilterBar";
 import BackButton from "@/components/BackButton";
+import CollapsibleFilter from "@/components/CollapsibleFilter";
 import Spinner from "@/components/ui/spinner";
 
 interface ResourceTypePageProps {
   params: Promise<{ subject: string; resourceType: string }>;
-  searchParams: Promise<{ year?: string; id?: string }>;
+  searchParams: Promise<{ year?: string; id?: string; lecturer?: string; series?: string }>;
 }
 
 export default async function ResourceTypePage({
@@ -26,7 +28,7 @@ export default async function ResourceTypePage({
   searchParams,
 }: ResourceTypePageProps) {
   const { subject, resourceType } = await params;
-  const { year, id } = await searchParams;
+  const { year, id, lecturer, series } = await searchParams;
 
   const subjectKey = subject as Subject;
   const typeKey = resourceType as ResourceType;
@@ -41,11 +43,22 @@ export default async function ResourceTypePage({
   let resources = getResourcesByType(subjectKey, typeKey);
   const availableYears = getAvailableYears(subjectKey, typeKey);
   const availableLecturers = getAvailableLecturers(subjectKey, typeKey);
+  const availableSeries = getAvailableSeries(subjectKey, typeKey);
 
   // Filter by year if provided
   if (year) {
     const yearNum = parseInt(year, 10);
     resources = resources.filter((r) => r.year === yearNum);
+  }
+
+  // Filter by lecturer if provided
+  if (lecturer) {
+    resources = resources.filter((r) => r.lecturer === lecturer);
+  }
+
+  // Filter by series if provided
+  if (series) {
+    resources = resources.filter((r) => r.series === series);
   }
 
   // If a specific resource ID is provided, show only that resource
@@ -89,6 +102,28 @@ export default async function ResourceTypePage({
                 <FilterBar years={availableYears} lecturers={availableLecturers} />
               </Suspense>
             </div>
+          )}
+
+          {/* Collapsible filter - only show for non-past-paper types */}
+          {typeKey !== "past-papers" && 
+           typeKey !== "past-paper-answers" && 
+           (availableLecturers.length > 0 || availableSeries.length > 0) && (
+            <Suspense
+              fallback={
+                <div className="flex items-center justify-center py-6">
+                  <Spinner variant="ring" className="text-text-tertiary" />
+                </div>
+              }
+            >
+              <CollapsibleFilter
+                lecturers={availableLecturers}
+                series={availableSeries}
+                currentLecturer={lecturer || null}
+                currentSeries={series || null}
+                subject={subjectKey}
+                resourceType={typeKey}
+              />
+            </Suspense>
           )}
 
           {resources.length > 0 ? (

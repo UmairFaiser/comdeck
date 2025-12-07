@@ -217,3 +217,21 @@ export function getAvailableLecturers(
   return Array.from(new Set(lecturers));
 }
 
+export function getAvailableSeries(
+  subject?: Subject,
+  type?: ResourceType
+): string[] {
+  let filtered = allResources;
+  if (subject) {
+    filtered = filtered.filter((r) => r.subject === subject);
+  }
+  if (type) {
+    filtered = filtered.filter((r) => r.type === type);
+  }
+  const series = filtered
+    .map((r) => r.series)
+    .filter((s): s is string => !!s)
+    .sort((a, b) => a.localeCompare(b));
+  return Array.from(new Set(series));
+}
+

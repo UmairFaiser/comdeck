@@ -6,15 +6,29 @@ import ResourceCard from "@/components/ResourceCard";
 interface ResourceListProps {
   resources: Resource[];
   selectedType: ResourceType | null;
+  selectedLecturer?: string | null;
+  selectedSeries?: string | null;
 }
 
 export default function ResourceList({
   resources,
   selectedType,
+  selectedLecturer,
+  selectedSeries,
 }: ResourceListProps) {
-  const filteredResources = selectedType
+  let filteredResources = selectedType
     ? resources.filter((r) => r.type === selectedType)
     : resources;
+
+  // Filter by lecturer if provided
+  if (selectedLecturer) {
+    filteredResources = filteredResources.filter((r) => r.lecturer === selectedLecturer);
+  }
+
+  // Filter by series if provided
+  if (selectedSeries) {
+    filteredResources = filteredResources.filter((r) => r.series === selectedSeries);
+  }
 
   if (filteredResources.length === 0) {
     return (

@@ -29,6 +29,7 @@ export default async function SubjectPage({ params }: SubjectPageProps) {
       resources={resources}
       availableTypes={availableTypes}
       subjectLabel={subjectLabel}
+      subject={subjectKey}
     />
   );
 }
