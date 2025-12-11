@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { Resource, SUBJECT_LABELS } from "@/lib/resources";
 import { Drawer } from "vaul";
 import { useToast } from "@/contexts/ToastContext";
@@ -13,6 +14,12 @@ interface LatestSidebarProps {
 export default function LatestSidebar({ open, onOpenChange, items }: LatestSidebarProps) {
   const { showToast } = useToast();
   const phoneNumber = "0759878351";
+
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    setIsScrolled(e.currentTarget.scrollTop > 0);
+  };
 
   const copyToClipboard = async () => {
     try {
@@ -28,7 +35,7 @@ export default function LatestSidebar({ open, onOpenChange, items }: LatestSideb
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 bg-black/40 z-60" />
         <Drawer.Content className="fixed right-0 top-0 h-full w-full md:w-md bg-surface/95 backdrop-blur border-l border-border shadow-xl z-70 outline-none flex flex-col">
-          <div className="flex items-center justify-between px-4 py-3 border-b border-border shrink-0">
+          <div className="flex items-center justify-between px-4 py-4 border-b border-border shrink-0">
             <Drawer.Title className="text-lg font-semibold text-foreground">Latest Uploads</Drawer.Title>
             <button onClick={() => onOpenChange(false)} className="rounded p-2 text-text-secondary hover:text-foreground transition-colors">
               <span className="sr-only">Close</span>
@@ -36,10 +43,12 @@ export default function LatestSidebar({ open, onOpenChange, items }: LatestSideb
             </button>
           </div>
           {/* Masking for top and bottom */}
-          <div className="absolute top-15 left-0 right-0 h-16 bg-linear-to-b from-surface to-surface/0 pointer-events-none z-10" />
+          {isScrolled && (
+            <div className="absolute top-15 left-0 right-0 h-16 bg-linear-to-b from-surface to-surface/0 pointer-events-none z-10" />
+          )}
           <div className="absolute bottom-12 left-0 right-0 h-16 bg-linear-to-t from-surface to-surface/0 pointer-events-none z-10" />
 
-          <div className="grow overflow-y-auto p-4 space-y-2 relative">
+          <div className="grow overflow-y-auto p-4 space-y-2 relative" onScroll={handleScroll}>
 
             {items.length === 0 ? (
               <div className="rounded-lg border border-border bg-surface p-4 text-center text-text-secondary">No recent items</div>
