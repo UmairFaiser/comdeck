@@ -37,16 +37,19 @@ export default function LatestSidebar({ open, onOpenChange, items }: LatestSideb
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 bg-black/40 z-60" />
         <Drawer.Content className="fixed right-0 top-0 h-full w-full md:w-md bg-surface/95 backdrop-blur border-l border-border shadow-xl z-70 outline-none flex flex-col">
-          <div className="flex items-center justify-between px-4 py-4 border-b border-border shrink-0">
-            <Drawer.Title className="text-lg font-semibold text-foreground">Latest Uploads</Drawer.Title>
-            <button onClick={() => onOpenChange(false)} className="rounded p-2 text-text-secondary hover:text-foreground transition-colors">
-              <span className="sr-only">Close</span>
-              ✕
-            </button>
-          </div>
+          <div className="flex flex-col px-4 py-4 border-b border-border shrink-0">
+              <span className="mb-2 px-2 py-0.5 rounded-full bg-accent-weak-bg text-accent text-xs font-medium self-start border border-accent">Total Resources: {items.length}</span>
+              <div className="flex items-center justify-between">
+                <Drawer.Title className="text-lg font-semibold text-foreground">Latest Uploads</Drawer.Title>
+                <button onClick={() => onOpenChange(false)} className="rounded p-2 text-text-secondary hover:text-foreground transition-colors">
+                  <span className="sr-only">Close</span>
+                  ✕
+                </button>
+              </div>
+            </div>
           {/* Masking for top and bottom */}
           {isScrolled && (
-            <div className="absolute top-15 left-0 right-0 h-16 bg-linear-to-b from-surface to-surface/0 pointer-events-none z-10" />
+            <div className="absolute top-24 left-0 right-0 h-16 bg-linear-to-b from-surface to-surface/0 pointer-events-none z-10" />
           )}
           <div className="absolute bottom-12 left-0 right-0 h-16 bg-linear-to-t from-surface to-surface/0 pointer-events-none z-10" />
 
