@@ -17,52 +17,55 @@ export default function SearchBar({
   const [query, setQuery] = useState(defaultValue);
   const [isListening, setIsListening] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
-  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-  const [isSupported] = useState(!!SpeechRecognition);
+  const [SpeechRecognition, setSpeechRecognition] = useState<SpeechRecognitionConstructor | null>(null);
+  const [isSupported, setIsSupported] = useState(false);
   const recognitionRef = useRef<SpeechRecognition | null>(null);
   const router = useRouter();
 
   useEffect(() => {
-    // Check if browser supports Web Speech API
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    
-    if (SpeechRecognition) {
-      const recognition = new SpeechRecognition();
-      recognition.continuous = false;
-      recognition.interimResults = false;
-      recognition.lang = "en-US";
+    if (typeof window !== 'undefined') {
+      const SpeechRecognitionConstructor = window.SpeechRecognition || window.webkitSpeechRecognition;
+      setSpeechRecognition(() => SpeechRecognitionConstructor);
+      setIsSupported(!!SpeechRecognitionConstructor);
 
-      recognition.onstart = () => {
-        setIsListening(true);
-        setIsProcessing(false);
-      };
+      if (SpeechRecognitionConstructor) {
+        const recognition = new SpeechRecognitionConstructor();
+        recognition.continuous = false;
+        recognition.interimResults = false;
+        recognition.lang = "en-US";
 
-      recognition.onresult = (event: SpeechRecognitionEvent) => {
-        const transcript = event.results[0][0].transcript;
-        setQuery(transcript);
-        setIsListening(false);
-        setIsProcessing(true);
-        
-        // Auto-submit after a short delay
-        setTimeout(() => {
-          if (transcript.trim()) {
-            router.push(`/search?q=${encodeURIComponent(transcript.trim())}`);
-          }
+        recognition.onstart = () => {
+          setIsListening(true);
           setIsProcessing(false);
-        }, 500);
-      };
+        };
 
-      recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
-        console.error("Speech recognition error:", event.error);
-        setIsListening(false);
-        setIsProcessing(false);
-      };
+        recognition.onresult = (event: SpeechRecognitionEvent) => {
+          const transcript = event.results[0][0].transcript;
+          setQuery(transcript);
+          setIsListening(false);
+          setIsProcessing(true);
+          
+          // Auto-submit after a short delay
+          setTimeout(() => {
+            if (transcript.trim()) {
+              router.push(`/search?q=${encodeURIComponent(transcript.trim())}`);
+            }
+            setIsProcessing(false);
+          }, 500);
+        };
 
-      recognition.onend = () => {
-        setIsListening(false);
-      };
+        recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
+          console.error("Speech recognition error:", event.error);
+          setIsListening(false);
+          setIsProcessing(false);
+        };
 
-      recognitionRef.current = recognition;
+        recognition.onend = () => {
+          setIsListening(false);
+        };
+
+        recognitionRef.current = recognition;
+      }
     }
 
     return () => {
