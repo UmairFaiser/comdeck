@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Resource, SUBJECT_LABELS } from "@/lib/resources";
 import { Drawer } from "vaul";
 import { useToast } from "@/contexts/ToastContext";
@@ -16,6 +16,8 @@ export default function LatestSidebar({ open, onOpenChange, items }: LatestSideb
   const phoneNumber = "0759878351";
 
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showAll, setShowAll] = useState(false);
+  const displayedItems = showAll ? items : items.slice(0, 20);
 
   const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
     setIsScrolled(e.currentTarget.scrollTop > 0);
@@ -25,7 +27,7 @@ export default function LatestSidebar({ open, onOpenChange, items }: LatestSideb
     try {
       await navigator.clipboard.writeText(phoneNumber);
       showToast("Phone number copied to clipboard!", "success");
-    } catch (err) {
+    } catch {
       showToast("Failed to copy phone number.", "error");
     }
   };
@@ -53,17 +55,28 @@ export default function LatestSidebar({ open, onOpenChange, items }: LatestSideb
             {items.length === 0 ? (
               <div className="rounded-lg border border-border bg-surface p-4 text-center text-text-secondary">No recent items</div>
             ) : (
-              items.map((r) => (
-                <Link
-                  key={r.id}
-                  href={`/${r.subject}/${r.type}?id=${r.id}`}
-                  className="block rounded-xl border border-border bg-surface p-3 shadow-sm transition-all hover:shadow-md hover:border-border-hover"
-                  onClick={() => onOpenChange(false)}
-                >
-                  <div className="text-sm font-medium text-foreground">{r.title}</div>
-                  <div className="mt-1 text-xs text-text-secondary">{SUBJECT_LABELS[r.subject]}{r.series ? ` · ${r.series}` : ""}</div>
-                </Link>
-              ))
+              <>
+                {displayedItems.map((r) => (
+                  <Link
+                    key={r.id}
+                    href={`/${r.subject}/${r.type}?id=${r.id}`}
+                    className="block rounded-xl border border-border bg-surface p-3 shadow-sm transition-all hover:shadow-md hover:border-border-hover"
+                    onClick={() => onOpenChange(false)}
+                  >
+                    <div className="text-sm font-medium text-foreground">{r.title}</div>
+                    <div className="mt-1 text-xs text-text-secondary">{SUBJECT_LABELS[r.subject]}{r.series ? ` · ${r.series}` : ""}</div>
+                  </Link>
+                ))}
+                {items.length > 20 && !showAll && (
+                  <button
+                    onClick={() => setShowAll(true)}
+                    className="w-full py-2 text-sm font-medium text-accent hover:underline"
+                  >
+                    Show More
+                  </button>
+                )}
+
+              </>
             )}
             <div className="pb-4" /> {/* Gap at the bottom */}
           </div>

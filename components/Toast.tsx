@@ -3,15 +3,13 @@
 import { useToast } from "@/contexts/ToastContext";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { ShieldIcon, CheckmarkCircle02Icon, InformationCircleIcon, AlertCircleIcon, Cancel01Icon } from "@hugeicons/core-free-icons";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function Toast() {
   const { toasts, removeToast } = useToast();
-  const [mounted, setMounted] = useState(false);
+  const [mounted] = useState(true);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  // No useEffect needed for mounted state as it's a client component
 
   if (!mounted || toasts.length === 0) return null;
 

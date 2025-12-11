@@ -17,18 +17,16 @@ export default function SearchBar({
   const [query, setQuery] = useState(defaultValue);
   const [isListening, setIsListening] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
-  const [isSupported, setIsSupported] = useState(false);
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const [isSupported] = useState(!!SpeechRecognition);
   const recognitionRef = useRef<SpeechRecognition | null>(null);
   const router = useRouter();
 
   useEffect(() => {
     // Check if browser supports Web Speech API
-    const SpeechRecognition =
-      (window as any).SpeechRecognition ||
-      (window as any).webkitSpeechRecognition;
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     
     if (SpeechRecognition) {
-      setIsSupported(true);
       const recognition = new SpeechRecognition();
       recognition.continuous = false;
       recognition.interimResults = false;

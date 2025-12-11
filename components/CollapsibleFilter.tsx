@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
-import { Subject, ResourceType } from "@/lib/resources";
+
 import { HugeiconsIcon } from "@hugeicons/react";
 import { UserIcon, FilterIcon, ArrowDown01Icon, ArrowUp01Icon } from "@hugeicons/core-free-icons";
 
@@ -11,8 +11,6 @@ interface CollapsibleFilterProps {
   series: string[];
   currentLecturer: string | null;
   currentSeries: string | null;
-  subject: Subject;
-  resourceType: ResourceType | null;
   onLecturerSelect?: (lecturer: string | null) => void;
   onSeriesSelect?: (series: string | null) => void;
 }
@@ -22,8 +20,6 @@ export default function CollapsibleFilter({
   series,
   currentLecturer,
   currentSeries,
-  subject,
-  resourceType,
   onLecturerSelect,
   onSeriesSelect,
 }: CollapsibleFilterProps) {

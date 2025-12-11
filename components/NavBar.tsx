@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { InboxIcon } from "@hugeicons/core-free-icons";
 import LatestSidebar from "./LatestSidebar";
@@ -8,7 +8,7 @@ import { getLatestResources } from "@/lib/resources";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
-  const items = useMemo(() => getLatestResources(12), []);
+  const items = getLatestResources();
   return (
     <nav className="w-full border-b border-border bg-surface/80 backdrop-blur supports-backdrop-filter:bg-surface/60">
       <div className="mx-auto max-w-7xl flex items-center justify-between px-6 sm:px-6 lg:px-8 h-14">

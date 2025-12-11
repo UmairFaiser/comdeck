@@ -1,23 +1,19 @@
 "use client";
 
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
-import { Subject, ResourceType } from "@/lib/resources";
+
 import { HugeiconsIcon } from "@hugeicons/react";
 import { UserIcon } from "@hugeicons/core-free-icons";
 
 interface LecturerFilterProps {
   lecturers: string[];
   currentLecturer: string;
-  subject: Subject;
-  resourceType: ResourceType;
   onLecturerSelect?: (lecturer: string | null) => void;
 }
 
 export default function LecturerFilter({
   lecturers,
   currentLecturer,
-  subject,
-  resourceType,
   onLecturerSelect,
 }: LecturerFilterProps) {
   const router = useRouter();

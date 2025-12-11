@@ -3,11 +3,11 @@ import { useState } from "react";
 
 export default function ContactPageClient() {
   const contacts = [
-    { label: "Credits / Removals", phone: "Will be added soon..." },
-    { label: "Submit a resource", phone: "Will be added soon..." }
+    { label: "Umair Faiser", phone: "0759878351" },
+    { label: "Anonymous", phone: "Will be added soon..." }
   ];
 
-  const [copied, setCopied] = useState<string | null>(null);
+  const [copiedStates, setCopiedStates] = useState<Record<string, boolean>>({});
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -24,13 +24,15 @@ export default function ContactPageClient() {
             type="button"
             onClick={async () => {
               await navigator.clipboard.writeText(c.phone);
-              setCopied(c.phone);
-              setTimeout(() => setCopied(null), 1500);
+              setCopiedStates((prev) => ({ ...prev, [c.label]: true }));
+              setTimeout(() => {
+                setCopiedStates((prev) => ({ ...prev, [c.label]: false }));
+              }, 1500);
             }}
             aria-label={`Copy ${c.label} phone number`}
             className="px-3 py-1 rounded border border-border text-sm hover:bg-border/20 transition"
           >
-            {copied === c.phone ? "Copied" : "Copy"}
+            {copiedStates[c.label] ? "Copied" : "Copy"}
           </button>
         </div>
       ))}
