@@ -25,11 +25,7 @@ html {
   scrollbar-color: var(--border) var(--surface);
 }
 
-body {
-  overflow: hidden;
-}
-
-/* WebKit-based browsers (Chrome, Edge, Safari) */
+  /* WebKit-based browsers (Chrome, Edge, Safari) */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
