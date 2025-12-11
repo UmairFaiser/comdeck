@@ -2038,6 +2038,20 @@
       "year": 2024,
       "title": "ICT Past Paper Answers 2024",
       "filePath": "/resources/ict/past-papers/ict-past-paper-answers-2024.pdf"
+    },
+    {
+      "id": "business-studies-short-notes-gr-12-full-syllabus",
+      "subject": "business-studies",
+      "type": "short-notes",
+      "title": "Business Studies Short Notes Grade 12 Full Syllabus",
+      "filePath": "/resources/business-studies/short-notes/business-studies-short-notes-gr-12-full-syllabus.pdf"
+    },
+    {
+      "id": "business-studies-short-notes-gr-13-full-syllabus",
+      "subject": "business-studies",
+      "type": "short-notes",
+      "title": "Business Studies Short Notes Grade 13 Full Syllabus",
+      "filePath": "/resources/business-studies/short-notes/business-studies-short-notes-gr-13-full-syllabus.pdf"
     }
   ]
 }

@@ -28,7 +28,7 @@ export default function NavBar() {
             onClick={() => setOpen(true)}
           >
             <HugeiconsIcon icon={InboxIcon} />
-            <span className="absolute top-0 right-0 block h-2 w-2 rounded-full bg-green-800/80 ring-2 ring-surface" />
+            <span className="absolute top-0 right-0 block h-2 w-2 rounded-full bg-green-600/80 ring-2 ring-surface" />
           </button>
         </div>
       </div>
