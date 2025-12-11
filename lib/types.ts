@@ -28,6 +28,7 @@ export interface Resource {
   chapter?: string; // Optional: Chapter grouping for videos
   day?: number; // Optional: Day number within chapter for videos
   series?: string; // Optional: Series label, e.g., Revision/Theory/Fast Track
+  timestamp?: number; // Optional: Unix timestamp for when the resource was added/updated
 }
 
 export interface ResourceFilters {

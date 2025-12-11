@@ -235,3 +235,17 @@ export function getAvailableSeries(
   return Array.from(new Set(series));
 }
 
+export function getLatestResources(count: number = 5): Resource[] {
+  const hasAnyTimestamp = allResources.some(
+    (r) => typeof r.timestamp === "number" && r.timestamp > 0
+  );
+  if (!hasAnyTimestamp) {
+    return allResources
+      .slice(Math.max(allResources.length - count, 0))
+      .reverse();
+  }
+  return [...allResources]
+    .sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0))
+    .slice(0, count);
+}
+

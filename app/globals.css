@@ -21,7 +21,7 @@
 
 html {
   /* Remove reserved scrollbar gutter for a cleaner look */
-  scrollbar-gutter: auto;
+  scrollbar-gutter: stable both-edges;
   /* Thin scrollbars for Firefox */
   scrollbar-width: thin;
   scrollbar-color: var(--border) var(--surface);
