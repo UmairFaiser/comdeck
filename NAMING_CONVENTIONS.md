@@ -179,6 +179,20 @@ Once you've uploaded your PDF files following these conventions, you can:
 2. **I'll generate the JSON** - I'll create the `data/resources.json` entries automatically
 3. **Review and adjust** - We can refine titles, descriptions, and linking relationships
 
+## Title & Series Conventions (Resources JSON)
+
+1. Titles must be clean and consistent:
+   - Do not include lecturer names (e.g., remove "Akila Fernando Sir", "Leon Fambek Sir")
+   - Do not include "GCE A/L" or year in video titles
+   - Use concise formats like:
+     - Topic videos: `Chapter — Day N` or `Operations Management — Theory`
+     - Paper discussions: `Homework Paper — Paper N Discussion`, `Final Paper — Paper N Discussion`, `Past Paper Discussions — YEAR`
+2. Series values are one-word standardized labels:
+   - `Theory` for theory lessons
+   - `Revision` for seminars/special sessions
+   - `paper discussion` for any paper discussion videos
+3. Keep subject details in other fields (`subject`, `chapter`, `year`) rather than in `title`.
+
 ## Need Help?
 
 If you're unsure about naming a file, follow this checklist:
