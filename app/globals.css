@@ -20,11 +20,13 @@
 }
 
 html {
-  /* Remove reserved scrollbar gutter for a cleaner look */
-  scrollbar-gutter: stable both-edges;
   /* Thin scrollbars for Firefox */
   scrollbar-width: thin;
   scrollbar-color: var(--border) var(--surface);
+}
+
+body {
+  overflow: hidden;
 }
 
 /* WebKit-based browsers (Chrome, Edge, Safari) */
