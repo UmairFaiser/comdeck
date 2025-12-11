@@ -27,7 +27,7 @@ export default function LatestSidebar({ open, onOpenChange, items }: LatestSideb
     <Drawer.Root open={open} onOpenChange={onOpenChange} direction="right">
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 bg-black/40 z-60" />
-        <Drawer.Content className="fixed right-0 top-0 h-full w-full md:w-md bg-surface/95 backdrop-blur border-l border-border shadow-xl z-[70] outline-none flex flex-col">
+        <Drawer.Content className="fixed right-0 top-0 h-full w-full md:w-md bg-surface/95 backdrop-blur border-l border-border shadow-xl z-70 outline-none flex flex-col">
           <div className="flex items-center justify-between px-4 py-3 border-b border-border shrink-0">
             <Drawer.Title className="text-lg font-semibold text-foreground">Latest Uploads</Drawer.Title>
             <button onClick={() => onOpenChange(false)} className="rounded p-2 text-text-secondary hover:text-foreground transition-colors">
@@ -37,7 +37,7 @@ export default function LatestSidebar({ open, onOpenChange, items }: LatestSideb
           </div>
           {/* Masking for top and bottom */}
           <div className="absolute top-15 left-0 right-0 h-16 bg-linear-to-b from-surface to-surface/0 pointer-events-none z-10" />
-          <div className="absolute bottom-[3rem] left-0 right-0 h-16 bg-gradient-to-t from-surface to-surface/0 pointer-events-none z-10" />
+          <div className="absolute bottom-12 left-0 right-0 h-16 bg-linear-to-t from-surface to-surface/0 pointer-events-none z-10" />
 
           <div className="grow overflow-y-auto p-4 space-y-2 relative">
 
@@ -58,7 +58,7 @@ export default function LatestSidebar({ open, onOpenChange, items }: LatestSideb
             )}
             <div className="pb-4" /> {/* Gap at the bottom */}
           </div>
-          <div className="flex-shrink-0 border-t border-border p-4 text-center text-sm text-text-secondary">
+          <div className="shrink-0 border-t border-border p-4 text-center text-sm text-text-secondary">
             <p>Have a resource? <button onClick={copyToClipboard} className="text-accent hover:underline">Whatsapp: {phoneNumber}</button></p>
           </div>
         </Drawer.Content>
