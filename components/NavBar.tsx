@@ -16,12 +16,7 @@ export default function NavBar() {
           Comdeck
         </Link>
         <div className="flex items-center gap-6">
-          <Link
-            href="/contact"
-            className="text-text-secondary hover:text-foreground transition-colors"
-          >
-            Contact
-          </Link>
+          
           <button
             className="relative text-text-secondary hover:text-foreground transition-colors"
             aria-label="Open latest uploads"
