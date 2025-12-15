@@ -9,30 +9,6 @@ import Toast from "../components/Toast";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-
-export const metadata = {
-  metadataBase: new URL(BASE_URL),
-  title: "Comdeck",
-  description: "A directory for AL commerce resources",
-  openGraph: {
-    title: "Comdeck",
-    description: "A directory for AL commerce resources",
-    url: BASE_URL,
-    siteName: "Comdeck",
-    images: [
-      {
-        url: "/opengraph-image.png", // Must be an absolute URL
-        width: 1200,
-        height: 630,
-        alt: "Comdeck - A directory for AL commerce resources",
-      },
-    ],
-    locale: "en_US",
-    type: "website",
-  },
-};
-
 const sans = localFont({
   src: [
     {
