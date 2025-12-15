@@ -1,4 +1,6 @@
 
+'use client';
+
 import localFont from "next/font/local";
 import "./globals.css";
 import NavBar from "../components/NavBar";
@@ -8,11 +10,9 @@ import Toast from "../components/Toast";
 
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-
-export const metadata = {
-  title: "Comdeck",
-  description: "A directory for AL commerce resources",
-};
+import { useState } from "react";
+import LatestSidebar from "../components/LatestSidebar";
+import { getLatestResources } from "@/lib/resources";
 
 const sans = localFont({
   src: [
@@ -69,6 +69,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const items = getLatestResources();
+
   return (
     <html lang="en">
       <body
@@ -76,13 +79,14 @@ export default function RootLayout({
       >
         <ToastProvider>
           <div className="sticky top-0 z-50">
-            <NavBar />
+            <NavBar setSidebarOpen={setSidebarOpen} />
             <ClientDisclaimerBanner />
           </div>
           <main>{children}</main>
           <Toast />
           <Analytics />
           <SpeedInsights />
+          <LatestSidebar open={sidebarOpen} onOpenChange={setSidebarOpen} items={items} />
         </ToastProvider>
       </body>
     </html>

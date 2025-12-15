@@ -6,8 +6,11 @@ import { InboxIcon } from "@hugeicons/core-free-icons";
 import LatestSidebar from "./LatestSidebar";
 import { getLatestResources } from "@/lib/resources";
 
-export default function NavBar() {
-  const [open, setOpen] = useState(false);
+interface NavBarProps {
+  setSidebarOpen: (open: boolean) => void;
+}
+
+export default function NavBar({ setSidebarOpen }: NavBarProps) {
   const items = getLatestResources();
   return (
     <nav className="w-full border-b border-border bg-surface/80 backdrop-blur supports-backdrop-filter:bg-surface/60">
@@ -20,14 +23,13 @@ export default function NavBar() {
           <button
             className="relative text-text-secondary hover:text-foreground transition-colors"
             aria-label="Open latest uploads"
-            onClick={() => setOpen(true)}
+            onClick={() => setSidebarOpen(true)}
           >
             <HugeiconsIcon icon={InboxIcon} />
             <span className="absolute top-0 right-0 block h-2 w-2 rounded-full bg-green-600/80 ring-2 ring-surface" />
           </button>
         </div>
       </div>
-      <LatestSidebar open={open} onOpenChange={setOpen} items={items} />
     </nav>
   );
 }
