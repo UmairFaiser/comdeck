@@ -46,6 +46,9 @@ export default function LatestSidebar({ open, onOpenChange, items }: LatestSideb
                   ✕
                 </button>
               </div>
+              <Drawer.Description className="sr-only">
+                A list of the latest uploaded resources.
+              </Drawer.Description>
             </div>
           {/* Masking for top and bottom */}
           {isScrolled && (
