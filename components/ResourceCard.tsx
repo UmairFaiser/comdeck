@@ -120,10 +120,11 @@ export default function ResourceCard({
       </div>
       <div className="absolute bottom-4 right-4">
         <ShareButton
-          resourceId={resource.id}
-          resourceType={resource.type}
-          subject={resource.subject}
-        />
+                resourceId={resource.id}
+                resourceType={resource.type}
+                subject={resource.subject}
+                resourceTitle={resource.title}
+              />
       </div>
       <div className="mt-4 flex flex-wrap gap-2">
         {resource.videoUrl ? (
