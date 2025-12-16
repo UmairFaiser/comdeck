@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
+import ShareButton from "@/components/ShareButton";
 import { Resource, RESOURCE_TYPE_LABELS } from "@/lib/resources";
 import { getLinkedResource, getAnswerResource } from "@/lib/resources";
 import { useToast } from "@/contexts/ToastContext";
@@ -60,7 +61,7 @@ export default function ResourceCard({
   }, [resource.title]); // Re-run effect if title changes
 
   return (
-    <div className="rounded-lg border border-border bg-surface p-5 transition-all hover:border-border-hover hover:bg-surface-hover">
+    <div className="relative rounded-lg border border-border bg-surface p-5 transition-all hover:border-border-hover hover:bg-surface-hover">
       <div className="flex items-start justify-between gap-4">
         <div className="flex-1 min-w-0">
           <div className="relative">
@@ -78,7 +79,7 @@ export default function ResourceCard({
               <div className="absolute right-0 top-0 h-full w-8 bg-linear-to-l from-surface to-transparent pointer-events-none" />
             )}
           </div>
-          <div className="mt-2 flex flex-wrap items-center gap-2">
+            <div className="mt-2 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center rounded border border-border bg-background px-2 py-1 text-xs text-text-tertiary">
               {typeLabel}
             </span>
@@ -116,6 +117,13 @@ export default function ResourceCard({
             </p>
           )}
         </div>
+      </div>
+      <div className="absolute bottom-4 right-4">
+        <ShareButton
+          resourceId={resource.id}
+          resourceType={resource.type}
+          subject={resource.subject}
+        />
       </div>
       <div className="mt-4 flex flex-wrap gap-2">
         {resource.videoUrl ? (
