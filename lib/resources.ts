@@ -248,3 +248,12 @@ export function getLatestResources(count?: number): Resource[] {
   return count === undefined ? sortedResources : sortedResources.slice(0, count);
 }
 
+export function getRandomResources(count: number, excludeId?: string): Resource[] {
+  let filteredResources = allResources;
+  if (excludeId) {
+    filteredResources = allResources.filter(r => r.id !== excludeId);
+  }
+  const shuffled = [...filteredResources].sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, count);
+}
+

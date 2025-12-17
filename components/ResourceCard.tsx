@@ -10,11 +10,13 @@ import { useToast } from "@/contexts/ToastContext";
 interface ResourceCardProps {
   resource: Resource;
   showLinkedPaper?: boolean;
+  subjectLabel?: string;
 }
 
 export default function ResourceCard({
   resource,
   showLinkedPaper = false,
+  subjectLabel,
 }: ResourceCardProps) {
   const linkedPaper = showLinkedPaper ? getLinkedResource(resource) : null;
   const answerResource = resource.hasAnswers
@@ -83,6 +85,11 @@ export default function ResourceCard({
             <span className="inline-flex items-center rounded border border-border bg-background px-2 py-1 text-xs text-text-tertiary">
               {typeLabel}
             </span>
+            {subjectLabel && (
+              <span className="inline-flex items-center rounded border border-border bg-background px-2 py-1 text-xs text-text-tertiary">
+                {subjectLabel}
+              </span>
+            )}
             {resource.day !== undefined && (
               <span className="inline-flex items-center rounded border border-border bg-background px-2 py-1 text-xs text-text-tertiary">
                 {`Day ${resource.day}`}
