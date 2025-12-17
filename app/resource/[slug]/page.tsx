@@ -16,18 +16,14 @@ export default function ResourcePage({ params: paramsPromise }: ResourcePageProp
   const searchParams = useSearchParams();
   const resourceId = searchParams.get('id');
 
-  console.log('All resources:', resources.map(r => ({ id: r.id, title: r.title, slug: createSlug(r.title) })));
-  console.log('Params slug:', params.slug);
-  console.log('Query resourceId:', resourceId);
 
   const resource = resources.find((r) => {
     const resourceSlug = createSlug(r.title);
-    console.log(`Comparing resource slug '${resourceSlug}' with params slug '${params.slug}' and resource ID '${r.id}' with query ID '${resourceId}'`);
     return resourceSlug === params.slug && r.id === resourceId;
   });
 
   if (!resource) {
-    console.log('Resource not found for slug:', params.slug, 'and ID:', resourceId);
+
     notFound();
   }
 
