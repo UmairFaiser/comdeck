@@ -2044,6 +2044,7 @@
       "subject": "business-studies",
       "type": "short-notes",
       "title": "Business Studies Short Notes Grade 12 Full Syllabus",
+      "lecturer": "Abdul Maajid",
       "filePath": "/resources/business-studies/short-notes/business-studies-short-notes-gr-12-full-syllabus.pdf"
     },
     {
@@ -2051,16 +2052,18 @@
       "subject": "business-studies",
       "type": "short-notes",
       "title": "Business Studies Short Notes Grade 13 Full Syllabus",
+      "lecturer": "Abdul Maajid",
       "filePath": "/resources/business-studies/short-notes/business-studies-short-notes-gr-13-full-syllabus.pdf"
-    }
-    ,
+    },
+    
     {
       "id": "economics-past-paper-answers-2002",
       "subject": "economics",
       "type": "past-paper-answers",
       "title": "Economics Past Paper Answers 2002",
       "filePath": "/resources/economics/past-paper-answers/economics-past-paper-answers-2002.pdf",
-      "year": 2002
+      "year": 2002,
+      "hasAnswers": true
     },
     {
       "id": "economics-past-paper-answers-2003",
@@ -2261,6 +2264,13 @@
       "title": "Economics Past Paper 2015",
       "filePath": "/resources/economics/past-papers/economics-past-paper-2015.pdf",
       "year": 2015
+    },
+    {
+      "id": "business-studies-notes-gr-12-full-syllabus",
+      "subject": "business-studies",
+      "type": "notes",
+      "title": "Business Studies Notes Grade 12 Full Syllabus",
+      "filePath": "/resources/business-studies/notes/business-studies-notes-gr-12-full-syllabus.pdf"
     }
   ]
 }

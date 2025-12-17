@@ -14,7 +14,7 @@ export default function Toast() {
   if (!mounted || toasts.length === 0) return null;
 
   return (
-    <div className="fixed top-4 left-1/2 -translate-x-1/2 z-[100] flex flex-col gap-2 items-center pointer-events-none">
+    <div className="fixed top-4 left-1/2 -translate-x-1/2 z-100 flex flex-col gap-2 items-center pointer-events-none">
       {toasts.map((toast) => {
         const getIcon = () => {
           switch (toast.type) {
@@ -53,7 +53,7 @@ export default function Toast() {
             role="alert"
           >
             {toast.type === "success" ? (
-              <div className="flex-shrink-0 relative w-5 h-5">
+              <div className="shrink-0 relative w-5 h-5">
                 <HugeiconsIcon
                   icon={ShieldIcon}
                   size={20}
@@ -76,7 +76,7 @@ export default function Toast() {
                 </div>
               </div>
             ) : (
-              <div className={`flex-shrink-0 ${getColor()}`}>
+              <div className={`shrink-0 ${getColor()}`}>
                 <HugeiconsIcon
                   icon={getIcon()}
                   size={20}
@@ -89,7 +89,7 @@ export default function Toast() {
             </p>
             <button
               onClick={() => removeToast(toast.id)}
-              className="flex-shrink-0 text-text-secondary hover:text-foreground transition-colors ml-1 opacity-70 hover:opacity-100"
+              className="shrink-0 text-text-secondary hover:text-foreground transition-colors ml-1 opacity-70 hover:opacity-100"
               aria-label="Close notification"
             >
               <HugeiconsIcon

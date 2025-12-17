@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Share04Icon } from "@hugeicons/core-free-icons";
 import ShareModal from "./ShareModal";
@@ -20,6 +20,7 @@ export default function ShareButton({
   resourceTitle,
 }: ShareButtonProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [shareUrl, setShareUrl] = useState('');
 
   const handleShareClick = () => {
     setIsModalOpen(true);
@@ -29,8 +30,12 @@ export default function ShareButton({
     setIsModalOpen(false);
   };
 
-  const slug = createSlug(resourceTitle);
-  const shareUrl = `${window.location.origin}/${subject}/${resourceType}/${slug}?id=${resourceId}`;
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const slug = createSlug(resourceTitle);
+      setShareUrl(`${window.location.origin}/resource/${slug}?id=${resourceId}`);
+    }
+  }, [resourceId, resourceType, subject, resourceTitle]);
 
   return (
     <>

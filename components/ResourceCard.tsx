@@ -87,12 +87,7 @@ export default function ResourceCard({
               <span className="inline-flex items-center rounded border border-border bg-background px-2 py-1 text-xs text-text-tertiary">
                 {`Day ${resource.day}`}
               </span>
-            )}
-            {resource.year && (
-              <span className="text-xs text-text-secondary">
-                {resource.year}
-              </span>
-            )}
+            )}          
             {resource.lecturer && (
               <span className="inline-flex items-center rounded border border-border bg-background px-2 py-1 text-xs text-text-tertiary">
                 {resource.lecturer}
