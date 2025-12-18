@@ -1,19 +1,29 @@
-
-'use client';
-
 import localFont from "next/font/local";
 import "./globals.css";
-import NavBar from "../components/NavBar";
-import ClientDisclaimerBanner from "../components/ClientDisclaimerBanner";
-import { ToastProvider } from "../contexts/ToastContext";
-import Toast from "../components/Toast";
+import ClientLayoutWrapper from "./ClientLayoutWrapper";
+import type { Metadata } from 'next';
 
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { useState } from "react";
-import LatestSidebar from "../components/LatestSidebar";
-import { getLatestResources } from "@/lib/resources";
-import { ThemeProvider } from "next-themes";
+export const metadata: Metadata = {
+  metadataBase: new URL('https://www.comdeck.vercel.app'),
+  title: 'Comdeck',
+  description: 'A directory for Advanced level commerce resources.',
+  openGraph: {
+    title: 'Comdeck',
+    description: 'A directory for Advanced level commerce resources.',
+    url: 'https://www.comdeck.vercel.app',
+    siteName: 'Comdeck',
+    images: ['/opengraph-image.png'],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Comdeck',
+    description: 'A directory for Advanced level commerce resources.',
+    creator: '@UmairFaiser',
+    images: ['/opengraph-image.png'],
+  },
+};
 
 const sans = localFont({
   src: [
@@ -63,33 +73,18 @@ const serif = localFont({
   variable: "--font-serif",
 });
 
-
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const items = getLatestResources();
+  const fontVariables = `${sans.variable} ${mono.variable} ${serif.variable}`;
 
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${sans.variable} ${mono.variable} ${serif.variable} antialiased`}>
-        <ThemeProvider attribute="data-theme" defaultTheme="system" enableSystem>
-          <ToastProvider>
-            <div className="sticky top-0 z-50">
-              <NavBar setSidebarOpen={setSidebarOpen} />
-              <ClientDisclaimerBanner />
-            </div>
-            <main>{children}</main>
-            <Toast />
-            <Analytics />
-            <SpeedInsights />
-            <LatestSidebar open={sidebarOpen} onOpenChange={setSidebarOpen} items={items} />
-          </ToastProvider>
-        </ThemeProvider>
-      </body>
+      <ClientLayoutWrapper fontVariables={fontVariables}>
+        {children}
+      </ClientLayoutWrapper>
     </html>
   );
 }
