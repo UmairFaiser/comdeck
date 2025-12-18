@@ -4,13 +4,13 @@ import ClientLayoutWrapper from "./ClientLayoutWrapper";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.comdeck.vercel.app'),
+  metadataBase: new URL('https://comdeck.vercel.app'),
   title: 'Comdeck',
   description: 'A directory for Advanced level commerce resources.',
   openGraph: {
     title: 'Comdeck',
     description: 'A directory for Advanced level commerce resources.',
-    url: 'https://www.comdeck.vercel.app',
+    url: 'https://comdeck.vercel.app',
     siteName: 'Comdeck',
     images: ['/opengraph-image.png'],
     locale: 'en_US',
