@@ -18,9 +18,7 @@ export function ThemeSwitcher() {
   const isDark =
     theme === "dark" || (theme === "system" && resolvedTheme === "dark")
 
-  const activeClass = isDark
-    ? "peer-checked:bg-gray-600 peer-checked:text-foreground-strong peer-checked:border peer-checked:border-gray-600"
-    : "peer-checked:bg-blue-100 peer-checked:text-foreground-strong peer-checked:border peer-checked:border-blue-200"
+  const activeClass = "peer-checked:bg-accent-weak-bg peer-checked:text-accent peer-checked:border peer-checked:border-accent"
 
   const baseClass =
     "relative flex h-[28px] w-[28px] cursor-pointer items-center justify-center rounded-full text-text-muted"
@@ -57,7 +55,8 @@ export function ThemeSwitcher() {
         />
         <label
           htmlFor="theme-light"
-          className={`${baseClass} peer-checked:bg-blue-100 peer-checked:text-foreground-strong peer-checked:border peer-checked:border-blue-200`}
+          className={`${baseClass} ${activeClass}`}
+
         >
           <SunIcon className="h-4 w-4" />
         </label>
@@ -75,7 +74,8 @@ export function ThemeSwitcher() {
         />
         <label
           htmlFor="theme-dark"
-          className={`${baseClass} peer-checked:bg-gray-600 peer-checked:text-foreground-strong peer-checked:border peer-checked:border-gray-600`}
+          className={`${baseClass} ${activeClass}`}
+
         >
           <MoonIcon className="h-4 w-4" />
         </label>
