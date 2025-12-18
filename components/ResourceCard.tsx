@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
@@ -36,7 +36,8 @@ export default function ResourceCard({
         const isOverflowing = el.scrollWidth > el.clientWidth;
         const scrolledToStart = el.scrollLeft === 0;
         // Add a small tolerance for floating point inaccuracies
-        const scrolledToEnd = el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
+        const scrolledToEnd =
+          el.scrollLeft + el.clientWidth >= el.scrollWidth - 1;
 
         setShowLeftMask(isOverflowing && !scrolledToStart);
         setShowRightMask(isOverflowing && !scrolledToEnd);
@@ -81,7 +82,7 @@ export default function ResourceCard({
               <div className="absolute right-0 top-0 h-full w-8 bg-linear-to-l from-surface to-transparent pointer-events-none" />
             )}
           </div>
-            <div className="mt-2 flex flex-wrap items-center gap-2">
+          <div className="mt-2 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center rounded border border-border bg-background px-2 py-1 text-xs text-text-tertiary">
               {typeLabel}
             </span>
@@ -94,7 +95,7 @@ export default function ResourceCard({
               <span className="inline-flex items-center rounded border border-border bg-background px-2 py-1 text-xs text-text-tertiary">
                 {`Day ${resource.day}`}
               </span>
-            )}          
+            )}
             {resource.lecturer && (
               <span className="inline-flex items-center rounded border border-border bg-background px-2 py-1 text-xs text-text-tertiary">
                 {resource.lecturer}
@@ -122,11 +123,11 @@ export default function ResourceCard({
       </div>
       <div className="absolute bottom-4 right-4">
         <ShareButton
-                resourceId={resource.id}
-                resourceType={resource.type}
-                subject={resource.subject}
-                resourceTitle={resource.title}
-              />
+          resourceId={resource.id}
+          resourceType={resource.type}
+          subject={resource.subject}
+          resourceTitle={resource.title}
+        />
       </div>
       <div className="mt-4 flex flex-wrap gap-2">
         {resource.videoUrl ? (
@@ -143,7 +144,7 @@ export default function ResourceCard({
             href={resource.filePath}
             download
             onClick={() => {
-              showToast(`Downloading ${resource.title}...`, "success");
+              showToast(`Download started : ${resource.title}...`, "success");
             }}
             className="inline-flex items-center justify-center rounded border border-border bg-transparent px-4 py-2 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
           >

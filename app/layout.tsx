@@ -13,6 +13,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { useState } from "react";
 import LatestSidebar from "../components/LatestSidebar";
 import { getLatestResources } from "@/lib/resources";
+import { ThemeProvider } from "next-themes";
 
 const sans = localFont({
   src: [
@@ -73,21 +74,21 @@ export default function RootLayout({
   const items = getLatestResources();
 
   return (
-    <html lang="en">
-      <body
-        className={`${sans.variable} ${mono.variable} ${serif.variable} antialiased`}
-      >
-        <ToastProvider>
-          <div className="sticky top-0 z-50">
-            <NavBar setSidebarOpen={setSidebarOpen} />
-            <ClientDisclaimerBanner />
-          </div>
-          <main>{children}</main>
-          <Toast />
-          <Analytics />
-          <SpeedInsights />
-          <LatestSidebar open={sidebarOpen} onOpenChange={setSidebarOpen} items={items} />
-        </ToastProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${sans.variable} ${mono.variable} ${serif.variable} antialiased`}>
+        <ThemeProvider attribute="data-theme" defaultTheme="system" enableSystem>
+          <ToastProvider>
+            <div className="sticky top-0 z-50">
+              <NavBar setSidebarOpen={setSidebarOpen} />
+              <ClientDisclaimerBanner />
+            </div>
+            <main>{children}</main>
+            <Toast />
+            <Analytics />
+            <SpeedInsights />
+            <LatestSidebar open={sidebarOpen} onOpenChange={setSidebarOpen} items={items} />
+          </ToastProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

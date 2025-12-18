@@ -5,7 +5,6 @@ import { notFound, useSearchParams } from 'next/navigation';
 import { createSlug } from '@/lib/utils';
 import React from 'react';
 import ResourceCard from '@/components/ResourceCard';
-import ResourceList from '@/components/ResourceList';
 import { getAllResources, getRandomResources, SUBJECT_LABELS } from '@/lib/resources';
 
 interface ResourcePageProps {

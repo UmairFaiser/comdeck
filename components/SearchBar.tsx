@@ -17,8 +17,10 @@ export default function SearchBar({
   const [query, setQuery] = useState(defaultValue);
   const [isListening, setIsListening] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
-  const [SpeechRecognition, setSpeechRecognition] = useState<SpeechRecognitionConstructor | null>(null);
-  const [isSupported, setIsSupported] = useState(false);
+  const [SpeechRecognition, setSpeechRecognition] = useState<SpeechRecognitionConstructor | null>(
+    () => (typeof window !== 'undefined' ? window.SpeechRecognition || window.webkitSpeechRecognition : null)
+  );
+  const [isSupported, setIsSupported] = useState<boolean>(false);
   const recognitionRef = useRef<SpeechRecognition | null>(null);
   const router = useRouter();
 

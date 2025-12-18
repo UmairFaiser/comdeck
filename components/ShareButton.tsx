@@ -20,7 +20,13 @@ export default function ShareButton({
   resourceTitle,
 }: ShareButtonProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [shareUrl, setShareUrl] = useState('');
+  const [shareUrl, setShareUrl] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const slug = createSlug(resourceTitle);
+      return `${window.location.origin}/resource/${slug}?id=${resourceId}`;
+    }
+    return '';
+  });
 
   const handleShareClick = () => {
     setIsModalOpen(true);
@@ -30,12 +36,7 @@ export default function ShareButton({
     setIsModalOpen(false);
   };
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const slug = createSlug(resourceTitle);
-      setShareUrl(`${window.location.origin}/resource/${slug}?id=${resourceId}`);
-    }
-  }, [resourceId, resourceType, subject, resourceTitle]);
+
 
   return (
     <>

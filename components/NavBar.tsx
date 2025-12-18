@@ -5,6 +5,7 @@ import { HugeiconsIcon } from "@hugeicons/react";
 import { InboxIcon } from "@hugeicons/core-free-icons";
 import LatestSidebar from "./LatestSidebar";
 import { getLatestResources } from "@/lib/resources";
+import { ThemeSwitcher } from "./ThemeSwitcher";
 
 interface NavBarProps {
   setSidebarOpen: (open: boolean) => void;
@@ -19,7 +20,7 @@ export default function NavBar({ setSidebarOpen }: NavBarProps) {
           Comdeck
         </Link>
         <div className="flex items-center gap-6">
-          
+          <ThemeSwitcher />
           <button
             className="relative text-text-secondary hover:text-foreground transition-colors"
             aria-label="Open latest uploads"
