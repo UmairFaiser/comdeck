@@ -4,7 +4,7 @@ import ClientLayoutWrapper from "./ClientLayoutWrapper";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://comdeck.vercel.app'),
+  metadataBase: new URL('https://www.comdeck.vercel.app'),
   title: 'Comdeck',
   description: 'A directory for Advanced level commerce resources.',
   openGraph: {
@@ -49,7 +49,7 @@ const sans = localFont({
 const mono = localFont({
   src: [
     {
-      path: "./fonts/intelone-mono/regular.woff",
+      path: "./fonts/isokeley-mono/IoskeleyMono-Regular.woff2",
       weight: "400",
       style: "normal",
     },

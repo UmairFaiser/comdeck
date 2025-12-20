@@ -1,0 +1,132 @@
+---
+title: "An Introduction to Web Development"
+createdAt: "2023-10-27"
+authors: 
+  - name: "Umair Faiser"
+    designation: "AL25`"
+    image: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3387&q=80"
+  - name: "Sahla Siraj"
+    designation: "AL25`"
+    image: "/female-avatar.png"
+description: "A deep dive into how the modern web works with HTML and CSS."
+subject: "ICT"
+unit: "10"
+keywords: ["web-development", "html", "css", advanced-level-ict, ict, ict-unit-08]
+---
+
+The web is built on three main pillars: **HTML**, **CSS**, and **JavaScript**. In our syllabus we only learn about `HTML` and `CSS`. So, for this blog post we'll stick to only `HTML` and `CSS`.
+
+```css {2, 4-6}
+.card {
+padding: 2rem; //hello world
+border-radius: 12px;
+background: #1a1a1a;
+color: white;
+border: 1px solid #333;
+text-align: center;
+{font-family: sans-serif;}
+}
+```
+
+## What can you expect from this blog post?
+
+While this blog post won't equip you with knowledge to build a whole site, it will give you the knowledge to answer the web development question in the advance level paper (according to recent trends its the first question from the structured paper)
+
+## How you'll learn?
+
+Unlike other blogs, this is an interactive blog. In the sense, you'll not only read through the blog post, but also you can write your own code, tweak the codes and some interactive exercises.
+
+# Lets get started!
+
+### What is a website?
+
+A website is a collection of web pages hosted on a server. A webpage is a document within a website that can be viewed through a browser.
+**Imagine** a website as a human body. It has skeleten, muscles and the systems which makes the body function. Likewise
+a website's skeleton or the basic structure is built using HTML. The muscle or so called the look of a website is built using css, those are the stylings, animations and anything related to design of the website. The functioning of a website is built using javascript like submitting the form, clearing the data etc..(we will not talk much about this as its not in the syllabus).
+
+## What is HTML?
+
+HTML (HyperText Markup Language) is the skeleton of your webpage. It defines the structure of your content using elements like headings, paragraphs, and images. HTML elements tell the browser on how to display a content. HTML elements are represented by HTML tags.
+Some examples of HTML tags are ; 
+
+## The Structure of an HTML Page
+
+Every HTML page starts with a basic structure. Here's an example:
+
+```html {2,7-10}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My First Page</title>
+  </head>
+  <body>
+    <h1>Hello, World!</h1>
+    <p>This is my first interactive web page.</p>
+  </body>
+</html>
+```
+
+<InteractiveSandbox
+  files={{
+    "/index.html": `<html>
+  <body>
+    <h1>Hello World!</h1>
+    <p>Welcome to your first HTML lesson.</p>
+    <button>Click me!</button>
+  </body>
+</html>`,
+  }}
+/>
+
+## Styling with CSS
+
+If HTML is the skeleton, **CSS** (Cascading Style Sheets) is the skin and clothing. It's what makes your website look beautiful. With CSS, you can change colors, fonts, layout, and even add animations!
+
+Check out how we can style our HTML:
+
+<InteractiveSandbox 
+  files={{
+    "/index.html": `<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="card">
+      <h1>Cool Card</h1>
+      <p>This is styled with CSS!</p>
+      <button>Learn More</button>
+    </div>
+  </body>
+</html>`,
+    "/style.css": `.card {
+  padding: 2rem;
+  border-radius: 12px;
+  background: #1a1a1a;
+  color: white;
+  border: 1px solid #333;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+button {
+background: #0070f3;
+color: white;
+border: none;
+padding: 0.5rem 1rem;
+border-radius: 6px;
+cursor: pointer;
+margin-top: 1rem;
+}
+
+button:hover {
+background: #0051ad;
+}`
+}}
+/>
+
+## Your Turn!
+
+Now it's your turn to experiment. Try changing the background color of the card or the text of the heading. Web development is all about **learning by doing**.
+
+Stay tuned for our next post where we'll add **JavaScript** to make things move!

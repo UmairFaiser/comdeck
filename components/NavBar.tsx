@@ -22,7 +22,7 @@ export default function NavBar({ setSidebarOpen }: NavBarProps) {
         <div className="flex items-center gap-6">
           <ThemeSwitcher />
           <button
-            className="relative text-text-secondary hover:text-foreground transition-colors"
+            className="cursor-pointer relative text-text-secondary hover:text-foreground transition-colors"
             aria-label="Open latest uploads"
             onClick={() => setSidebarOpen(true)}
           >
