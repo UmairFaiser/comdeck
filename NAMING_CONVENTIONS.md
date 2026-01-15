@@ -182,7 +182,6 @@ Once you've uploaded your PDF files following these conventions, you can:
 ## Title & Series Conventions (Resources JSON)
 
 1. Titles must be clean and consistent:
-   - Do not include lecturer names (e.g., remove "Akila Fernando Sir", "Leon Fambek Sir")
    - Do not include "GCE A/L" or year in video titles
    - Use concise formats like:
      - Topic videos: `Chapter — Day N` or `Operations Management — Theory`
